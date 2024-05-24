@@ -1,0 +1,41 @@
+@mixin container-full($field) {
+  padding: $field $field 0;
+}
+
+@mixin containerOne() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fonts($font, $line, $letter) {
+  font-size: $font;
+  line-height: $line;
+  letter-spacing: $letter;
+}
+
+@mixin fontsSize($font) {
+  font-size: $font;
+}
+
+@mixin fontsSize15() {
+  font-weight: $fontWeightRegular;
+  @include fonts(15px, 15.45px, -0.04em);
+  color: $colorGrayFive;
+}

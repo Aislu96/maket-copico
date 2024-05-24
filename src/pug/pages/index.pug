@@ -1,0 +1,86 @@
+extends ../layout/base
+
+block variables
+    //подключаем основу для страницы и выводим в нее данные
+    - var title='Webpack-template with Pug';
+    - var description='Description for webpack + Pug';
+    - var pageClass='index-page';
+
+block content
+
+    section(class="banner")
+        video(autoplay muted loop class="banner__video")
+            source(src="assets/img/anmim.mp4" type="video/mp4")
+        div(class="banner__container")
+            h1(class="banner__title") Crypto trading with bots and smart seals
+            button(class="banner__button")
+                span Sign up now
+                span
+                span
+            p(class="banner__text") Trade for free on your favorite exchanges
+            div(class="banner__group")
+                div(class="banner__img")
+                    img(src="assets/img/banner/binance.svg" alt="picture logo")
+                div(class="banner__img")
+                    img(src="assets/img/banner/FTX.svg" alt="picture logo")
+                div(class="banner__img")
+                    img(src="assets/img/banner/huobi.svg" alt="picture logo")
+                div(class="banner__img")
+                    img(src="assets/img/banner/exmo.svg" alt="picture logo")
+                div(class="banner__img")
+                    img(src="assets/img/banner/okx.svg" alt="picture logo")
+                div(class="banner__img")
+                    img(src="assets/img/banner/bybit.svg" alt="picture logo")
+
+    section(class="video")
+        div(class="video__container")
+            div(class="video__img-container video__img-container_active")
+                h2 Manage positions on different <br> exchanges from one <br> window
+                img(class="video__image" src="assets/img/video/fonOne.png" alt="picture video")
+                img(class="video__image" src="assets/img/video/fonTwo.png" alt="picture video")
+                img(class="video__image" src="assets/img/video/fonThree.png" alt="picture video")
+                button(class="video__button" type="button")
+                    span
+            div(class="video__group")
+                div(class="video__cross-icon")
+                    div(class="video__line1")
+                    div(class="video__line2")
+                video(class="video__play" controls)
+                    source(src="assets/video.mp4" type="video/mp4")
+
+    section(class="numbers")
+        div(class="numbers__container")
+            img(src="assets/img/numbers/numbers.png" alt="picture fon")
+            div(class="numbers__info")
+                div(class="numbers__row")
+                    h4 numbers
+                    span Manage positions on
+                h2 $18.5 B+
+                p Total trading volume
+            div(class="numbers__group")
+                p Actual statistic on 19.07.2022
+                div(class="numbers__items")
+                    div(class="numbers__item")
+                        h4 36 М+
+                        span We are online
+                    div
+                    div(class="numbers__item")
+                        h4 21.5 K+
+                        span Traiders <br> in platform
+                    div(class="numbers__item")
+                        h4 325 M+
+                        span Total <br> deals in platform
+
+    section(class="info")
+        video(autoplay muted loop class="banner__video")
+            source(src="assets/img/anmim.mp4" type="video/mp4")
+        di(class="info__container")
+            p Free use per month
+            h2 Try Capico for free per month
+            button(class="info__button")
+                span Create an account
+                span
+                span
+block script
+    script(type='text/javascript')
+
