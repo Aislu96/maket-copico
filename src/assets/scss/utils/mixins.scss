@@ -37,5 +37,5 @@
 @mixin fontsSize15() {
   font-weight: $fontWeightRegular;
   @include fonts(15px, 15.45px, -0.04em);
-  color: $colorGrayFive;
+  //color: $colorGrayFive;
 }

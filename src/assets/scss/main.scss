@@ -363,11 +363,13 @@
 
     &:hover {
       cursor: pointer;
+
       & span:nth-child(2) {
         background-image: url("/assets/img/banner/VectorTwo.svg");
         width: 70px;
         height: 21px;
       }
+
       & span:nth-child(3) {
         background-color: $colorWhite;
         width: 55px;
@@ -474,6 +476,7 @@
       width: 310px;
       margin: 0;
       height: 59px;
+
       & span:nth-child(1) {
         @include fonts(19px, 18.81px, -0.02em);
       }
@@ -484,11 +487,13 @@
 
       &:hover {
         cursor: pointer;
+
         & span:nth-child(3) {
           right: 63px;
           width: 40px;
           height: 40px;
         }
+
         & span:nth-child(2) {
           width: 57px;
           height: 16px;
@@ -964,8 +969,8 @@
   }
 }
 
-@media screen and (max-width: 374px) {
-  &__item {
+@media screen and (max-width: 370px) {
+  .numbers__item {
     width: auto;
   }
 }
@@ -973,6 +978,407 @@
 /* /numbers */
 
 
+/* benefits */
+.benefits {
+  &__container {
+    @include flex-column;
+    padding: 50px 25px 122px;
+  }
+
+  &__row {
+    @include flex-row;
+    justify-content: space-between;
+    margin-bottom: 94px;
+    padding: 21px 20px 0 17px;
+    border: 1px solid $colorVioletThree;
+    border-radius: 30px 30px 0 0;
+    border-bottom: none;
+
+    & h4 {
+      font-weight: $fontWeightSemiBold;
+      @include fonts(70px, 65.1px, -0.04em);
+      color: $colorWhite;
+    }
+
+    & span {
+      @include fontsSize15;
+      color: $colorGrayFour;
+    }
+  }
+
+  &__info {
+    overflow: hidden;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 187px;
+    @include flex-row;
+    justify-content: flex-end;
+    position: relative;
+
+    & img {
+      z-index: 1;
+      max-width: 100%;
+      object-fit: contain;
+      height: auto;
+      position: absolute;
+      top: -38px;
+    }
+
+    &_one img, &_three img {
+      left: -112px;
+    }
+
+    &_two {
+      justify-content: flex-start;
+
+      & img {
+        right: -141px;
+      }
+    }
+  }
+
+  &__block {
+    z-index: 2;
+    position: relative;
+    width: 48.5%;
+    @include flex-column;
+    gap: 100px;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 61px;
+    border: 1px solid $colorVioletSix;
+    border-radius: 50px 50px 0 0;
+    border-bottom: 0;
+    border-left: none;
+    border-right: none;
+
+    &_non {
+      border: none;
+    }
+
+    & h2 {
+      font-weight: $fontWeightLigth;
+      @include fonts(130px, 120.9px, -0.04em);
+      color: transparent;
+      background: $gradient-four;
+      -webkit-background-clip: text;
+    }
+  }
+
+  &__group {
+    gap: 40px;
+    @include flex-row;
+
+    & h3 {
+      font-weight: $fontWeightRegular;
+      @include fonts(40px, 37.2px, -0.04em);
+      color: $colorWhite;
+    }
+
+    & span {
+      font-weight: $fontWeightLigth;
+      color: $colorGrayTwo;
+    }
+
+    & p {
+      width: 50%;
+      //font-family: SF Pro Text;
+      font-weight: $fontWeightLigth;
+      @include fonts(18px, 18.54px, -0.04em);
+      color: $colorGraySix;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .benefits {
+    &__container {
+      padding: 95px 16px 220px;
+    }
+
+    &__row {
+      margin-bottom: 26px;
+      padding: 14px 21px 0 21px;
+
+      & h4 {
+        font-weight: $fontWeightMedium;
+        @include fonts(60px, 55.8px, -0.04em);
+      }
+
+      & span {
+        display: none;
+      }
+    }
+
+    &__info {
+      margin-bottom: 92px;
+
+      & img {
+        display: flex;
+        justify-content: center;
+        max-width: 80%;
+      }
+    }
+
+    &__block {
+      height: 500px;
+      gap: 84px;
+      padding-left: 22px;
+      padding-right: 22px;
+      padding-top: 56px;
+
+      & h2 {
+        @include fonts(60px, 55.8px, -0.04em);
+      }
+    }
+
+    &__group {
+      & h3 {
+        @include fonts(20.85px, 21.48px, -0.04em);
+      }
+
+      & p {
+        //font-family: SF Pro Text;
+        @include fonts(14px, 14.42px, -0.03em);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .benefits {
+    &__container {
+      padding: 54px 10px 105px;
+    }
+
+    &__info {
+      align-items: center;
+      @include flex-column;
+      gap: 17px;
+      border-top: 1px solid #644f86;
+      margin-bottom: 41px;
+      padding-top: 52px;
+      padding-left: 0;
+      padding-right: 0;
+
+      &_one {
+        border: none;
+        padding-top: 0;
+      }
+
+      & img {
+        top: 0;
+        left: 0;
+        position: relative;
+      }
+    }
+
+    &__row {
+      margin-bottom: 15px;
+      padding: 9px 9px 0;
+
+      & h4 {
+        @include fonts(37.71px, 35.07px, -0.04em);
+      }
+    }
+
+
+    &__block {
+      height: auto;
+      width: 100%;
+      gap: 25px;
+      padding-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+      border: none;
+
+      & h2 {
+        @include fonts(55px, 51.15px, -0.04em);
+      }
+    }
+
+    &__group {
+      & h3 {
+        @include fonts(18px, 16.74px, -0.04em);
+      }
+
+      & p {
+        @include fonts(12px, 12.36px, -0.04em);
+      }
+    }
+  }
+}
+
+/* /benefits */
+
+
+/* partners */
+.partners {
+  background: $gradient-fix;
+
+  &__container {
+    padding: 31px 25px 111px;
+    @include flex-column;
+    gap: 140px;
+  }
+
+  &__group {
+    border-top: 1px solid $colorWhite;
+    border-radius: 30px 30px 0 0;
+    @include flex-row;
+    padding: 20px 82px 0 25px;
+
+    & h2 {
+      width: 60%;
+      color: $colorWhite;
+      font-weight: $fontWeightMedium;
+      @include fonts(90px, 92.7px, -0.04em);
+    }
+
+    & p {
+      color: transparent;
+      background: $gradient-four;
+      -webkit-background-clip: text;
+      width: 40%;
+      font-weight: $fontWeightMedium;
+      @include fonts(40px, 40px, -0.03em);
+    }
+  }
+
+  &__block {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 33px;
+    margin: 0 auto;
+  }
+
+  &__items {
+    margin: 0 auto;
+    @include flex-row;
+    gap: 33px;
+  }
+
+  &__item {
+    @include flex-column;
+    gap: 15px;
+  }
+
+  &__img {
+    width: 304px;
+    height: 185px;
+    @include flex-center;
+    border: 1px solid #B496EE;
+    border-radius: 40px;
+
+    &:hover {
+      border: 2px solid $colorWhite;
+      cursor: pointer;
+    }
+  }
+
+  & span {
+    font-weight: $fontWeightMedium;
+    @include fonts(12px, 15px, -0.04em);
+    color: $colorVioletEight;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .partners {
+    &__container {
+      padding: 22px 17px 43px;
+      gap: 40px;
+    }
+
+    &__group {
+      @include flex-column;
+      gap: 24px;
+      padding-right: 33px;
+      padding-left: 33px;
+      padding-top: 29px;
+
+      & h2 {
+        width: 100%;
+        @include fonts(70px, 72.1px, -0.04em);
+      }
+
+      & p {
+        width: 100%;
+        font-weight: $fontWeightMedium;
+        @include fonts(30px, 30px, -0.01em);
+      }
+    }
+
+    &__block {
+      gap: 19px;
+    }
+
+    &__items {
+      gap: 19px;
+    }
+
+    &__item {
+      gap: 0;
+    }
+
+    &__img {
+      width: 370px;
+      height: 130px;
+    }
+
+    & span {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .partners {
+    &__container {
+      padding: 21px 15px 29px;
+      gap: 40px;
+    }
+
+    &__group {
+      padding-right: 6px;
+      padding-left: 6px;
+      padding-top: 16px;
+
+      & h2 {
+        @include fonts(40px, 37.2px, -0.04em);
+      }
+
+      & p {
+        @include fonts(23px, 23px, -0.02em);
+      }
+    }
+
+    &__block {
+      gap: 8px;
+    }
+
+    &__items {
+      gap: 8px;
+    }
+
+    &__img {
+      width: 168px;
+      height: 102px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .partners__img {
+    width: 141px;
+  }
+}
+
+
+/* /partners */
 /* info */
 .info {
   height: 100vh;
@@ -1001,7 +1407,6 @@
       width: 59%;
       -webkit-background-clip: text;
     }
-
 
   }
 
@@ -1070,6 +1475,7 @@
       & p {
         display: none;
       }
+
       & h2 {
         font-weight: $fontWeightRegular;
         @include fonts(80.47px, 74.84px, -0.04em);
@@ -1117,7 +1523,7 @@
     &__container {
       & h2 {
         font-weight: $fontWeightMedium;
-        @include fonts(40px,  37.6px, -0.03em);
+        @include fonts(40px, 37.6px, -0.03em);
         margin-top: 0;
         margin-bottom: 118px;
         width: 100%;
@@ -1149,6 +1555,7 @@
           width: 48px;
           height: 48px;
         }
+
         & span:nth-child(2) {
           width: 35px;
           height: 9px;
@@ -1157,7 +1564,42 @@
     }
   }
 }
+
 /* /info */
+
+/* trade */
+.trade {
+  &__container {
+    height: 100vh;
+    position: relative;
+    padding: 71px 25px 0;
+    @include flex-column;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    z-index: 2;
+    font-weight: $fontWeightLigth;
+    @include fonts(18px, 18.54px, -0.04em);
+    color: $colorGrey;
+    text-align: right;
+    margin-bottom: 27px;
+  }
+  & h2 {
+    font-weight: $fontWeightRegular;
+    @include fonts(130px, 120.9px, -0.04em);
+    color: $colorWhite;
+    margin-bottom: 168px;
+    z-index: 2;
+  }
+}
+/* /trade */
 
 
 /* footer */
