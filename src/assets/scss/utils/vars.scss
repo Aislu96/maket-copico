@@ -1,12 +1,6 @@
 /* Vars:
    ========================================================================== */
 
-// Font
-$mainFont: 'Nekst', Helvetica, Arial, sans-serif;
-$mainFontSize            : 16px;
-$mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
-
 //Color
 $colorWhite: #FFFFFF;
 $colorBlack: #000000;
@@ -40,12 +34,9 @@ $gradient-three: rgba(64, 46, 92, 1);
 $gradient-five: linear-gradient(89.92deg, #FFFFFF 10.08%, #5F29B7 98.33%);
 $gradient-fix: linear-gradient(125.96deg, #7061AA -34.49%, #340E73 85.02%);
 
-
-
-
 //Fonts
-$fontWeightLigth: 300;
-$fontWeightMedium: 500;
+$fontWeightLight: 300;
 $fontWeightRegular: 400;
+$fontWeightMedium: 500;
 $fontWeightSemiBold: 600;
 $fontWeightBold: 700;

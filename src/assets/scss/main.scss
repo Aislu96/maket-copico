@@ -9,6 +9,7 @@
 @import "block/banner";
 
 .index-page {
+  font-family: "Nekst", sans-serif;
   background-color: $colorBlack;
   width: 100%;
   margin: 0 auto;
@@ -19,6 +20,255 @@
   box-sizing: border-box;
   position: relative;
 }
+
+/* button */
+
+
+.button {
+  position: relative;
+  @include flex-row();
+  align-items: center;
+  justify-content: space-around;
+  width: 678px;
+  height: 128px;
+  background-color: $colorViolet;
+  border-radius: 79px;
+  margin: 0 auto;
+
+  & span:nth-child(1) {
+    @include fonts(45px, 41.85px, -0.04em);
+    font-weight: $fontWeightSemiBold;
+    color: $colorWhite;
+  }
+
+  & span:nth-child(2) {
+    z-index: 2;
+    background-image: url("/assets/img/Vector.svg");
+    display: block;
+    width: 61px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  & span:nth-child(3) {
+    position: absolute;
+    right: 36px;
+    border: 1px solid $colorWhite;
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & span:nth-child(2) {
+      width: 84px;
+      height: 24px;
+      background-image: url("/assets/img/VectorTwo.svg");
+    }
+
+    & span:nth-child(3) {
+      width: 103px;
+      height: 103px;
+      background-color: $colorWhite;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .button {
+    width: 545px;
+    height: 103px;
+    background-color: $colorViolet;
+    border-radius: 56px;
+
+    & span:nth-child(1) {
+      @include fonts(36.21px, 33.68px, -0.04em);
+    }
+
+    & span:nth-child(2) {
+      width: 61px;
+      height: 18px;
+    }
+
+    & span:nth-child(3) {
+      width: 67px;
+      height: 67px;
+    }
+
+    &:hover {
+      & span:nth-child(3) {
+        width: 83px;
+        height: 83px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  .button {
+    width: 300px;
+    height: 57px;
+    border-radius: 31px;
+
+    & span:nth-child(1) {
+      @include fonts(19.91px, 18.52px, -0.04em);
+    }
+
+    & span:nth-child(2) {
+      width: 29px;
+      height: 8px;
+    }
+
+    & span:nth-child(3) {
+      right: 13px;
+      width: 38px;
+      height: 38px;
+    }
+
+    &:hover {
+      & span:nth-child(3) {
+        width: 48px;
+        height: 48px;
+      }
+
+      & span:nth-child(2) {
+        width: 35px;
+        height: 9px;
+      }
+    }
+  }
+}
+
+.button__banner {
+  margin: 0;
+  @include flex-center();
+  gap: 24px;
+  width: 324px;
+  height: 78px;
+  border-radius: 43px;
+
+  & span:nth-child(1) {
+    @include fonts(28px, 26px, -0.03em);
+  }
+
+  & span:nth-child(2) {
+    width: 48px;
+    height: 14px;
+  }
+
+  & span:nth-child(3) {
+    right: 42px;
+    width: 50px;
+    height: 50px;
+  }
+
+  &:hover {
+    & span:nth-child(2) {
+      width: 70px;
+      height: 21px;
+    }
+
+    & span:nth-child(3) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+}
+
+/* border-gradient */
+.border {
+  padding: 14px 17px 0;
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  border-radius: 20px 20px 0 0;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: none;
+  background: linear-gradient(#000, #000) padding-box,
+  $gradient-four border-box;
+  &__trade {
+    padding: 20px 20px 0;
+  }
+  &__partners {
+    padding: 20px 25px 0;
+    background: none;
+    border: 1px solid $colorWhite;
+    border-bottom: none;
+  }
+}
+
+.border-container {
+  width: 100%;
+  @include flex-row;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  &__trade {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1100px){
+  .border {
+    padding-left: 21px;
+    padding-right: 21px;
+    margin-bottom: 51px;
+  }
+
+  .border-container__partners {
+    flex-direction: column;
+    gap:24px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .border {
+    height: 31px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 9px;
+  }
+}
+/*/border-gradient */
+
+@media screen and (max-width: 600px) {
+  .button__banner {
+    width: 300px;
+    margin: 0;
+    height: 59px;
+
+    & span:nth-child(1) {
+      @include fonts(19px, 18.81px, -0.02em);
+    }
+
+    & span:nth-child(3) {
+      right: 55px;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      & span:nth-child(3) {
+        right: 55px;
+        width: 50px;
+        height: 50px;
+      }
+
+      & span:nth-child(2) {
+        width: 57px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+/* /button */
+
 
 /* header */
 .header {
@@ -56,7 +306,7 @@
     gap: 16px;
 
     & span {
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(25px, 25px, -0.03em);
     }
 
@@ -325,59 +575,6 @@
     width: 100%;
   }
 
-  &__button {
-    @include flex-row();
-    @include flex-center();
-    position: relative;
-    gap: 24px;
-    width: 324px;
-    height: 78px;
-    background-color: $colorViolet;
-    border-radius: 43px;
-    font-weight: $fontWeightSemiBold;
-
-
-    & span:nth-child(1) {
-      @include fonts(28px, 26px, -0.03em);
-      font-weight: $fontWeightSemiBold;
-    }
-
-    & span:nth-child(2) {
-      background-image: url("/assets/img/banner/Vector.svg");
-      display: block;
-      width: 48px;
-      height: 14px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 2;
-    }
-
-    & span:nth-child(3) {
-      position: absolute;
-      right: 42px;
-      border: 1px solid $colorWhite;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      & span:nth-child(2) {
-        background-image: url("/assets/img/banner/VectorTwo.svg");
-        width: 70px;
-        height: 21px;
-      }
-
-      & span:nth-child(3) {
-        background-color: $colorWhite;
-        width: 55px;
-        height: 55px;
-      }
-    }
-  }
-
   &__text {
     width: 397px;
     margin-top: 145px;
@@ -472,36 +669,6 @@
       @include fonts(18.34px, 20.72px, -0.04em);
     }
 
-    &__button {
-      width: 310px;
-      margin: 0;
-      height: 59px;
-
-      & span:nth-child(1) {
-        @include fonts(19px, 18.81px, -0.02em);
-      }
-
-      & span:nth-child(3) {
-        right: 55px;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        & span:nth-child(3) {
-          right: 63px;
-          width: 40px;
-          height: 40px;
-        }
-
-        & span:nth-child(2) {
-          width: 57px;
-          height: 16px;
-        }
-      }
-    }
-
-
     &__img {
       width: 45%;
       height: 66px;
@@ -539,7 +706,7 @@
       z-index: 5;
       top: 0;
       margin: 0 auto;
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(70px, 79.1px, -0.04em);
       text-align: center;
       color: transparent;
@@ -729,7 +896,7 @@
 
 /* numbers */
 .numbers {
-
+  overflow: hidden;
   &__container {
     position: relative;
     padding: 0 25px 79px;
@@ -741,10 +908,9 @@
     position: absolute;
     z-index: -1;
     object-fit: cover;
-    bottom: 81px;
+    bottom: -143px;
     right: 0;
     max-width: 100%;
-    max-height: 100%;
   }
 
   &__group {
@@ -774,7 +940,7 @@
     border: 1px solid $colorVioletThree;
 
     & h4 {
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(80px, 74.4px, -0.04em);
       color: $colorWhite;
     }
@@ -789,7 +955,7 @@
     @include flex-column;
 
     & h2 {
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(250px, 232.5px, -0.04em);
       color: $colorWhite;
       margin-left: 56px;
@@ -806,15 +972,9 @@
   }
 
   &__row {
-    @include flex-row;
-    align-items: start;
-    justify-content: space-between;
-    position: relative;
-    padding: 14px 17px 0;
+    height: 70px;
     margin-bottom: 72px;
-    border-radius: 30px 30px 0 0;
-    border: 1px solid $colorViolet;
-    border-bottom: 0;
+    position: relative;
 
     & h4 {
       font-weight: $fontWeightMedium;
@@ -834,11 +994,11 @@
 @media screen and (max-width: 1100px) {
   .numbers {
     & img {
-      bottom: 0;
+      transform: scale(1.3);
     }
 
     &__container {
-      padding: 0 16px 79px;
+      padding: 0 16px 53px;
     }
 
     &__group {
@@ -856,6 +1016,7 @@
       width: 211px;
       gap: 56px;
       padding: 24px 16px;
+      border-radius: 22.5px;
 
       & h4 {
         @include fonts(44.88px, 41.74px, -0.04em);
@@ -884,10 +1045,8 @@
     }
 
     &__row {
-      padding-left: 21px;
-      padding-right: 21px;
       margin-bottom: 51px;
-
+      height: 55px;
       & span {
         display: none;
       }
@@ -899,6 +1058,7 @@
 @media screen and (max-width: 760px) {
   .numbers {
     & img {
+      transform: scale(1.6);
       top: 146px;
     }
 
@@ -918,6 +1078,7 @@
 
     &__items {
       gap: 15px 11px;
+      border-radius: 18.5px;
     }
 
     &__item {
@@ -952,9 +1113,6 @@
     }
 
     &__row {
-      padding-left: 9px;
-      padding-right: 9px;
-      padding-top: 9px;
       margin-bottom: 31px;
 
       & h4 {
@@ -986,13 +1144,9 @@
   }
 
   &__row {
-    @include flex-row;
-    justify-content: space-between;
+    height: 70px;
+    position: relative;
     margin-bottom: 94px;
-    padding: 21px 20px 0 17px;
-    border: 1px solid $colorVioletThree;
-    border-radius: 30px 30px 0 0;
-    border-bottom: none;
 
     & h4 {
       font-weight: $fontWeightSemiBold;
@@ -1057,7 +1211,7 @@
     }
 
     & h2 {
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(130px, 120.9px, -0.04em);
       color: transparent;
       background: $gradient-four;
@@ -1076,14 +1230,14 @@
     }
 
     & span {
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       color: $colorGrayTwo;
     }
 
     & p {
       width: 50%;
       //font-family: SF Pro Text;
-      font-weight: $fontWeightLigth;
+      font-weight: $fontWeightLight;
       @include fonts(18px, 18.54px, -0.04em);
       color: $colorGraySix;
     }
@@ -1099,7 +1253,6 @@
 
     &__row {
       margin-bottom: 26px;
-      padding: 14px 21px 0 21px;
 
       & h4 {
         font-weight: $fontWeightMedium;
@@ -1177,7 +1330,6 @@
 
     &__row {
       margin-bottom: 15px;
-      padding: 9px 9px 0;
 
       & h4 {
         @include fonts(37.71px, 35.07px, -0.04em);
@@ -1225,10 +1377,8 @@
   }
 
   &__group {
-    border-top: 1px solid $colorWhite;
-    border-radius: 30px 30px 0 0;
-    @include flex-row;
-    padding: 20px 82px 0 25px;
+    position: relative;
+    height: 169px;
 
     & h2 {
       width: 60%;
@@ -1293,12 +1443,6 @@
     }
 
     &__group {
-      @include flex-column;
-      gap: 24px;
-      padding-right: 33px;
-      padding-left: 33px;
-      padding-top: 29px;
-
       & h2 {
         width: 100%;
         @include fonts(70px, 72.1px, -0.04em);
@@ -1342,10 +1486,6 @@
     }
 
     &__group {
-      padding-right: 6px;
-      padding-left: 6px;
-      padding-top: 16px;
-
       & h2 {
         @include fonts(40px, 37.2px, -0.04em);
       }
@@ -1410,58 +1550,6 @@
 
   }
 
-  &__button {
-    position: relative;
-    @include flex-row();
-    align-items: center;
-    justify-content: space-around;
-    width: 678px;
-    height: 128px;
-    background-color: $colorViolet;
-    border-radius: 79px;
-    margin: 0 auto;
-
-    & span:nth-child(1) {
-      @include fonts(45px, 41.85px, -0.04em);
-      font-weight: $fontWeightSemiBold;
-      color: $colorWhite;
-    }
-
-    & span:nth-child(2) {
-      z-index: 2;
-      background-image: url("/assets/img/banner/Vector.svg");
-      display: block;
-      width: 61px;
-      height: 18px;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    & span:nth-child(3) {
-      position: absolute;
-      right: 48px;
-      border: 1px solid $colorWhite;
-      width: 83px;
-      height: 83px;
-      border-radius: 50%;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      & span:nth-child(2) {
-        width: 84px;
-        height: 24px;
-        background-image: url("/assets/img/banner/VectorTwo.svg");
-      }
-
-      & span:nth-child(3) {
-        width: 103px;
-        height: 103px;
-        background-color: $colorWhite;
-      }
-    }
-  }
 }
 
 
@@ -1485,34 +1573,6 @@
       }
     }
 
-    &__button {
-      width: 545px;
-      height: 103px;
-      background-color: $colorViolet;
-      border-radius: 56px;
-
-      & span:nth-child(1) {
-        @include fonts(36.21px, 33.68px, -0.04em);
-      }
-
-      & span:nth-child(2) {
-        width: 61px;
-        height: 18px;
-      }
-
-      & span:nth-child(3) {
-        right: 48px;
-        width: 67px;
-        height: 67px;
-      }
-
-      &:hover {
-        & span:nth-child(3) {
-          width: 83px;
-          height: 83px;
-        }
-      }
-    }
   }
 }
 
@@ -1529,39 +1589,6 @@
         width: 100%;
       }
     }
-
-    &__button {
-      width: 300px;
-      height: 57px;
-      border-radius: 31px;
-
-      & span:nth-child(1) {
-        @include fonts(19.91px, 18.52px, -0.04em);
-      }
-
-      & span:nth-child(2) {
-        width: 29px;
-        height: 8px;
-      }
-
-      & span:nth-child(3) {
-        right: 21px;
-        width: 38px;
-        height: 38px;
-      }
-
-      &:hover {
-        & span:nth-child(3) {
-          width: 48px;
-          height: 48px;
-        }
-
-        & span:nth-child(2) {
-          width: 35px;
-          height: 9px;
-        }
-      }
-    }
   }
 }
 
@@ -1569,36 +1596,137 @@
 
 /* trade */
 .trade {
+  padding: 71px 25px 0;
+
   &__container {
-    height: 100vh;
-    position: relative;
-    padding: 71px 25px 0;
     @include flex-column;
-    & img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+    position: relative;
   }
+  &__row {
+    height: 193px;
+    position: relative;
+  }
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  &__group {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 81px;
+  }
+
   &__text {
     z-index: 2;
-    font-weight: $fontWeightLigth;
+    font-weight: $fontWeightLight;
     @include fonts(18px, 18.54px, -0.04em);
     color: $colorGrey;
     text-align: right;
     margin-bottom: 27px;
+    margin-left: auto;
   }
+
   & h2 {
     font-weight: $fontWeightRegular;
     @include fonts(130px, 120.9px, -0.04em);
     color: $colorWhite;
-    margin-bottom: 168px;
     z-index: 2;
   }
+
+  & p {
+    margin-top: 168px;
+    margin-left: 20px;
+    position: relative;
+    color: $colorWhite;
+    font-weight: $fontWeightRegular;
+    @include fonts(40px, 48px, -0.04em);
+    z-index: 2;
+    margin-bottom: 118px;
+    width: 414px;
+  }
 }
+
+
+@media screen and (max-width: 1100px) {
+  .trade {
+    padding: 60px 17px 0;
+
+
+    &__row {
+      height: 115px;
+    }
+
+    &__container {
+      padding: 50px 22px 0;
+    }
+
+    & img {
+      top: 0;
+      left: 0;
+      transform: scale(1.6);
+    }
+
+    &__group {
+      padding-bottom: 109px;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    & h2 {
+      font-weight: $fontWeightMedium;
+      @include fonts(70px, 65.1px, -0.04em);
+    }
+
+    & p {
+      margin-top: 182px;
+      @include fonts(30px, 36px, -0.04em);
+      margin-bottom: 150px;
+      width: 245px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .trade {
+    padding: 36px 10px 0;
+
+    &__container {
+      padding: 0;
+    }
+
+    & img {
+      position: relative;
+      bottom: 0;
+      left: 0;
+    }
+
+    &__group {
+      padding-bottom: 55px;
+    }
+
+    & h2 {
+      padding: 12px 12px 0;
+      @include fonts(40px, 37.2px, -0.04em);
+      text-transform: lowercase;
+    }
+
+    & p {
+      margin-top: 39px;
+      @include fonts(22px, 26.4px, -0.04em);
+      margin-bottom: 27px;
+      width: auto;
+    }
+  }
+}
+
 /* /trade */
 
 

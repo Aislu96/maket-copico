@@ -13,7 +13,7 @@ block content
             source(src="assets/img/anmim.mp4" type="video/mp4")
         div(class="banner__container")
             h1(class="banner__title") Crypto trading with bots and smart seals
-            button(class="banner__button")
+            button(class="button button__banner")
                 span Sign up now
                 span
                 span
@@ -53,8 +53,10 @@ block content
             img(src="assets/img/numbers/numbers.png" alt="picture fon")
             div(class="numbers__info")
                 div(class="numbers__row")
-                    h4 numbers
-                    span Manage positions on
+                    div(class="border")
+                        div(class="border-container")
+                            h4 numbers
+                            span Manage positions on
                 h2 $18.5 B+
                 p Total trading volume
             div(class="numbers__group")
@@ -74,8 +76,10 @@ block content
     section(class="benefits")
         div(class="benefits__container")
             div(class="benefits__row")
-                h4 benefits
-                span Manage positions on
+                div(class="border")
+                    div(class="border-container")
+                        h4 benefits
+                        span Manage positions on
             div(class="benefits__info benefits__info_one")
                 img(src="assets/img/benefits/benefitsOne.png" alt="screenshot with statistics")
                 div(class="benefits__block benefits__block_non")
@@ -86,7 +90,8 @@ block content
             div(class="benefits__info benefits__info_two")
                 img(src="assets/img/benefits/benefitsTwo.png" alt="screenshot with statistics")
                 div(class="benefits__block")
-                    h2 MultiChart
+                    div(class="benefits__item")
+                         h2 MultiChart
                     div(class="benefits__group")
                         h3 Add any trading pairs
                             span  from different exchanges and analyzecryptocurrency assets on one screen
@@ -100,19 +105,26 @@ block content
 
     section(class="trade")
         div(class="trade__container")
-            img(src="assets/img/fonTrade.png" alt="Fon block")
-            span(class="trade__text") All functionality is always at hand.
-            h2 Trade anywhere
-            p The service is fully adapted to work through a browser on your smartphone or tablet
-            button(class="info__button")
-                span Create an account
-                span
-                span
+            div(class="trade__row")
+                div(class="border border__trade")
+                    div(class="border-container border-container__trade")
+                        span(class="trade__text") All functionality is always at hand.
+                        h2 Trade anywhere
+            div(class="trade__group")
+                img(src="assets/img/trade/fonTrade.png" alt="Fon block")
+                p The service is fully adapted to work through a browser on your smartphone or tablet
+                button(class="button")
+                    span Create an account
+                    span
+                    span
+
     section(class="partners")
         div(class="partners__container")
             div(class="partners__group")
-                h2 our partners
-                p The Capico platform is the official broker of the leading cryptocurrency exchanges
+                div(class="border border__partners")
+                    div(class="border-container border-container__partners")
+                        h2 our partners
+                        p The Capico platform is the official broker of the leading cryptocurrency exchanges
             div(class="partners__block")
                 div(class="partners__items")
                     div(class="partners__item")
@@ -139,7 +151,7 @@ block content
         di(class="info__container")
             p Free use per month
             h2 Try Capico for free per month
-            button(class="info__button")
+            button(class="button")
                 span Create an account
                 span
                 span
