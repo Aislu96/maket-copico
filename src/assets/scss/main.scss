@@ -13,12 +13,13 @@
   background-color: $colorBlack;
   width: 100%;
   margin: 0 auto;
-  max-width: 1600px;
   min-width: 320px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  max-width: 2000px;
+  overflow-x: hidden;
 }
 
 /* button */
@@ -107,7 +108,7 @@
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .button {
     width: 300px;
     height: 57px;
@@ -180,6 +181,8 @@
 
 /* border-gradient */
 .border {
+  top:0;
+  left: 0;
   padding: 14px 17px 0;
   content: "";
   width: 100%;
@@ -192,9 +195,15 @@
   border-bottom: none;
   background: linear-gradient(#000, #000) padding-box,
   $gradient-four border-box;
+
+  &__block {
+    background: linear-gradient(#000, #000) padding-box,
+    $colorVioletSeven border-box;
+  }
   &__trade {
     padding: 20px 20px 0;
   }
+
   &__partners {
     padding: 20px 25px 0;
     background: none;
@@ -209,11 +218,13 @@
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
+
   &__trade {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 1100px){
+
+@media screen and (max-width: 1100px) {
   .border {
     padding-left: 21px;
     padding-right: 21px;
@@ -222,18 +233,22 @@
 
   .border-container__partners {
     flex-direction: column;
-    gap:24px;
+    gap: 24px;
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 700px) {
   .border {
     height: 31px;
     padding-left: 9px;
     padding-right: 9px;
     padding-top: 9px;
+    &__block {
+      display: none;
+    }
   }
 }
+
 /*/border-gradient */
 
 @media screen and (max-width: 600px) {
@@ -550,27 +565,52 @@
 /* /header */
 
 
-/* banner */
-.banner {
-  padding-top: 204px;
-  padding-bottom: 63px;
-  position: relative;
+.section__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
 
-  &__video {
+
+  video {
+    width: 100%;
+    height: 100%;
     transform: scaleX(-1);
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     bottom: 0;
     object-fit: cover;
-    min-width: 100%;
-    min-height: 100%;
+    z-index: -1;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .section__video {
+    width: 219%;
+    overflow: visible;
+    height: 36%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    video {
+
+    }
+  }
+}
+
+/* banner */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 
   &__container {
-    padding-left: 53px;
-    padding-right: 53px;
-    position: relative;
+    padding: 204px 53px 63px;
     @include flex-column;
     width: 100%;
   }
@@ -620,12 +660,9 @@
 
 @media screen and (max-width: 1100px) {
   .banner {
-    padding-top: 197px;
-    padding-bottom: 29px;
 
     &__container {
-      padding-left: 17px;
-      padding-right: 48px;
+      padding: 197px 48px 29px 17px;
     }
 
     &__title {
@@ -652,13 +689,14 @@
 
 @media screen and (max-width: 600px) {
   .banner {
-
     &__container {
+      padding-top: 338px;
       padding-left: 10px;
       padding-right: 10px;
     }
 
     &__title {
+      margin-top: 0;
       width: 100%;
       @include fonts(56px, 55px, -0.02em);
     }
@@ -856,7 +894,6 @@
 
 @media screen and (max-width: 667px) {
   .video {
-
     &__container {
       max-height: 480px;
       padding-top: 60px;
@@ -895,22 +932,50 @@
 
 
 /* numbers */
+.section__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .section__img {
+    transform: scale(1.3);
+    top: 100px;
+
+    &_trade {
+      transform: none;
+    }
+
+    &_info {
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .section__img {
+    transform: scale(1);
+
+    &_trade {
+      height: 52%;
+      background-position: 91%;
+    }
+  }
+}
+
 .numbers {
-  overflow: hidden;
+  position: relative;
+
   &__container {
-    position: relative;
     padding: 0 25px 79px;
     @include flex-column;
-  }
-
-  & img {
-    @include flex-center;
-    position: absolute;
-    z-index: -1;
-    object-fit: cover;
-    bottom: -143px;
-    right: 0;
-    max-width: 100%;
   }
 
   &__group {
@@ -936,8 +1001,48 @@
     @include flex-column;
     gap: 123px;
     padding: 42px 30px 21px;
-    border-radius: 40px;
-    border: 1px solid $colorVioletThree;
+    position: relative;
+
+    &-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid transparent;
+      border-radius: 40px;
+      background: transparent;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 180%;
+        height: 180%;
+        top: 50%;
+        left: 50%;
+        background: linear-gradient(96.63deg, #fff 5.78%, #5f29b7 72.85%, #8E67CC) border-box;
+        animation: rotate 5s ease infinite;
+        translate: -50% -50%;
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    &:last-child::before {
+      background: linear-gradient(238.9deg, #FFFFFF 26.74%, #5F29B7 76.18%, #8E67CC) border-box;
+      background-size: 400% 400%;
+      animation: gradient 5s ease infinite;
+      transform: translate3d(0, 0, 0);
+    }
 
     & h4 {
       font-weight: $fontWeightLight;
@@ -960,9 +1065,11 @@
       color: $colorWhite;
       margin-left: 56px;
       margin-bottom: 21px;
+      z-index: 1;
     }
 
     & p {
+      z-index: 1;
       margin-left: 83px;
       color: $colorWhite;
       font-weight: $fontWeightRegular;
@@ -991,12 +1098,9 @@
   }
 }
 
+
 @media screen and (max-width: 1100px) {
   .numbers {
-    & img {
-      transform: scale(1.3);
-    }
-
     &__container {
       padding: 0 16px 53px;
     }
@@ -1047,6 +1151,7 @@
     &__row {
       margin-bottom: 51px;
       height: 55px;
+
       & span {
         display: none;
       }
@@ -1161,7 +1266,6 @@
   }
 
   &__info {
-    overflow: hidden;
     padding-left: 25px;
     padding-right: 25px;
     margin-bottom: 187px;
@@ -1170,7 +1274,7 @@
     position: relative;
 
     & img {
-      z-index: 1;
+      z-index: -1;
       max-width: 100%;
       object-fit: contain;
       height: auto;
@@ -1200,11 +1304,6 @@
     padding-left: 36px;
     padding-right: 36px;
     padding-top: 61px;
-    border: 1px solid $colorVioletSix;
-    border-radius: 50px 50px 0 0;
-    border-bottom: 0;
-    border-left: none;
-    border-right: none;
 
     &_non {
       border: none;
@@ -1521,16 +1620,10 @@
 /* /partners */
 /* info */
 .info {
-  height: 100vh;
-  padding: 41px 25px 102px;
   position: relative;
 
-  & video {
-    transform: scaleX(1);
-  }
-
   &__container {
-    position: relative;
+    padding: 41px 25px 102px;
     @include flex-column;
 
     & p {
@@ -1538,6 +1631,7 @@
     }
 
     & h2 {
+      height: 266px;
       color: transparent;
       background: $gradient-five;
       font-weight: $fontWeightMedium;
@@ -1547,24 +1641,22 @@
       width: 59%;
       -webkit-background-clip: text;
     }
-
   }
-
 }
 
 
 @media screen and (max-width: 1100px) {
   .info {
-    height: auto;
-    padding-top: 119px;
-    padding-bottom: 84px;
-
     &__container {
+      padding-top: 119px;
+      padding-bottom: 84px;
+
       & p {
         display: none;
       }
 
       & h2 {
+        height: 214px;
         font-weight: $fontWeightRegular;
         @include fonts(80.47px, 74.84px, -0.04em);
         margin-top: 0;
@@ -1578,10 +1670,11 @@
 
 @media screen and (max-width: 560px) {
   .info {
-    padding: 46px 0 60px;
-
     &__container {
+      padding: 46px 0 60px;
+
       & h2 {
+        height: 102px;
         font-weight: $fontWeightMedium;
         @include fonts(40px, 37.6px, -0.03em);
         margin-top: 0;
@@ -1596,24 +1689,16 @@
 
 /* trade */
 .trade {
+  position: relative;
   padding: 71px 25px 0;
 
   &__container {
     @include flex-column;
-    position: relative;
   }
+
   &__row {
     height: 193px;
     position: relative;
-  }
-
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: auto;
   }
 
   &__group {
@@ -1666,12 +1751,6 @@
       padding: 50px 22px 0;
     }
 
-    & img {
-      top: 0;
-      left: 0;
-      transform: scale(1.6);
-    }
-
     &__group {
       padding-bottom: 109px;
     }
@@ -1702,24 +1781,18 @@
       padding: 0;
     }
 
-    & img {
-      position: relative;
-      bottom: 0;
-      left: 0;
-    }
-
     &__group {
       padding-bottom: 55px;
     }
 
     & h2 {
-      padding: 12px 12px 0;
+      padding: 12px 0 0;
       @include fonts(40px, 37.2px, -0.04em);
       text-transform: lowercase;
     }
 
     & p {
-      margin-top: 39px;
+      margin-top: 352px;
       @include fonts(22px, 26.4px, -0.04em);
       margin-bottom: 27px;
       width: auto;
