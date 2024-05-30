@@ -1,3 +1,5 @@
+@import "./_functions";
+
 @mixin container-full($field) {
   padding: $field $field 0;
 }
@@ -24,9 +26,12 @@
   align-items: center;
 }
 
-@mixin fonts($font, $line, $letter) {
-  font-size: $font;
-  line-height: $line;
+@mixin fonts($font, $line) {
+  font-size: rem($font);
+  line-height: rem($line);
+}
+
+@mixin letter($letter){
   letter-spacing: $letter;
 }
 
@@ -36,6 +41,7 @@
 
 @mixin fontsSize15() {
   font-weight: $fontWeightRegular;
-  @include fonts(15px, 15.45px, -0.04em);
+  @include fonts(15, 15.45);
+  @include letter(-0.04em)
   //color: $colorGrayFive;
 }

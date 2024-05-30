@@ -14,8 +14,7 @@
   width: 100%;
   margin: 0 auto;
   min-width: 320px;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   box-sizing: border-box;
   position: relative;
   max-width: 2000px;
@@ -36,13 +35,14 @@
   border-radius: 79px;
   margin: 0 auto;
 
-  & span:nth-child(1) {
-    @include fonts(45px, 41.85px, -0.04em);
+  span:nth-child(1) {
+    @include fonts(45, 41.85);
+    @include letter(-0.04em);
     font-weight: $fontWeightSemiBold;
     color: $colorWhite;
   }
 
-  & span:nth-child(2) {
+  span:nth-child(2) {
     z-index: 2;
     background-image: url("/assets/img/Vector.svg");
     display: block;
@@ -52,7 +52,7 @@
     background-size: cover;
   }
 
-  & span:nth-child(3) {
+  span:nth-child(3) {
     position: absolute;
     right: 36px;
     border: 1px solid $colorWhite;
@@ -64,13 +64,13 @@
   &:hover {
     cursor: pointer;
 
-    & span:nth-child(2) {
+    span:nth-child(2) {
       width: 84px;
       height: 24px;
       background-image: url("/assets/img/VectorTwo.svg");
     }
 
-    & span:nth-child(3) {
+    span:nth-child(3) {
       width: 103px;
       height: 103px;
       background-color: $colorWhite;
@@ -85,22 +85,22 @@
     background-color: $colorViolet;
     border-radius: 56px;
 
-    & span:nth-child(1) {
-      @include fonts(36.21px, 33.68px, -0.04em);
+    span:nth-child(1) {
+      @include fonts(36.21, 33.68);
     }
 
-    & span:nth-child(2) {
+    span:nth-child(2) {
       width: 61px;
       height: 18px;
     }
 
-    & span:nth-child(3) {
+    span:nth-child(3) {
       width: 67px;
       height: 67px;
     }
 
     &:hover {
-      & span:nth-child(3) {
+      span:nth-child(3) {
         width: 83px;
         height: 83px;
       }
@@ -114,28 +114,28 @@
     height: 57px;
     border-radius: 31px;
 
-    & span:nth-child(1) {
-      @include fonts(19.91px, 18.52px, -0.04em);
+    span:nth-child(1) {
+      @include fonts(19.91, 18.52);
     }
 
-    & span:nth-child(2) {
+    span:nth-child(2) {
       width: 29px;
       height: 8px;
     }
 
-    & span:nth-child(3) {
+    span:nth-child(3) {
       right: 13px;
       width: 38px;
       height: 38px;
     }
 
     &:hover {
-      & span:nth-child(3) {
+      span:nth-child(3) {
         width: 48px;
         height: 48px;
       }
 
-      & span:nth-child(2) {
+      span:nth-child(2) {
         width: 35px;
         height: 9px;
       }
@@ -151,28 +151,29 @@
   height: 78px;
   border-radius: 43px;
 
-  & span:nth-child(1) {
-    @include fonts(28px, 26px, -0.03em);
+  span:nth-child(1) {
+    @include fonts(28, 26);
+    @include letter(-0.03em);
   }
 
-  & span:nth-child(2) {
+  span:nth-child(2) {
     width: 48px;
     height: 14px;
   }
 
-  & span:nth-child(3) {
+  span:nth-child(3) {
     right: 42px;
     width: 50px;
     height: 50px;
   }
 
   &:hover {
-    & span:nth-child(2) {
+    span:nth-child(2) {
       width: 70px;
       height: 21px;
     }
 
-    & span:nth-child(3) {
+    span:nth-child(3) {
       width: 55px;
       height: 55px;
     }
@@ -181,7 +182,7 @@
 
 /* border-gradient */
 .border {
-  top:0;
+  top: 0;
   left: 0;
   padding: 14px 17px 0;
   content: "";
@@ -200,6 +201,7 @@
     background: linear-gradient(#000, #000) padding-box,
     $colorVioletSeven border-box;
   }
+
   &__trade {
     padding: 20px 20px 0;
   }
@@ -243,8 +245,14 @@
     padding-left: 9px;
     padding-right: 9px;
     padding-top: 9px;
+
     &__block {
       display: none;
+    }
+    &__work {
+      border: none;
+      height: 0;
+      padding: 0;
     }
   }
 }
@@ -257,24 +265,25 @@
     margin: 0;
     height: 59px;
 
-    & span:nth-child(1) {
-      @include fonts(19px, 18.81px, -0.02em);
+    span:nth-child(1) {
+      @include fonts(19, 18.81);
+      @include letter(-0.02em);
     }
 
-    & span:nth-child(3) {
+    span:nth-child(3) {
       right: 55px;
     }
 
     &:hover {
       cursor: pointer;
 
-      & span:nth-child(3) {
+      span:nth-child(3) {
         right: 55px;
         width: 50px;
         height: 50px;
       }
 
-      & span:nth-child(2) {
+      span:nth-child(2) {
         width: 57px;
         height: 16px;
       }
@@ -320,12 +329,13 @@
     @include flex-center();
     gap: 16px;
 
-    & span {
+    span {
       font-weight: $fontWeightLight;
-      @include fonts(25px, 25px, -0.03em);
+      @include fonts(25, 25);
+      @include letter(-0.03em);
     }
 
-    & div {
+    div {
       background-image: url("/assets/img/header/arrow.svg");
       display: block;
       width: 14px;
@@ -337,11 +347,11 @@
     &:hover {
       cursor: pointer;
 
-      & span {
+      span {
         color: $colorViolet;
       }
 
-      & div {
+      div {
         background-image: url("/assets/img/header/arrowTwo.svg");
       }
     }
@@ -351,9 +361,10 @@
     @include flex-row();
     gap: 30px;
 
-    & li {
+    li {
       font-weight: $fontWeightMedium;
-      @include fonts(25px, 25px, -0.03em);
+      @include fonts(25, 25);
+      @include letter(-0.03em);
     }
   }
 
@@ -366,12 +377,13 @@
     background-color: $colorViolet;
     border-radius: 43px;
 
-    & span:nth-child(1) {
-      @include fonts(25px, 25px, -0.03em);
+    span:nth-child(1) {
+      @include fonts(25, 25);
+      @include letter(-0.03em);
       font-weight: $fontWeightMedium;
     }
 
-    & span:nth-child(2) {
+    span:nth-child(2) {
       background-image: url("/assets/img/arrowLeft.svg");
       display: block;
       width: 30px;
@@ -384,7 +396,7 @@
       background-color: $colorVioletFour;
       cursor: pointer;
 
-      & span:nth-child(2) {
+      span:nth-child(2) {
         background-image: url("/assets/img/arrowLeftTwo.svg");
       }
     }
@@ -422,7 +434,7 @@
       transition: .2s all ease-in-out;
     }
 
-    & span {
+    span {
       position: absolute;
       background-color: $colorWhite;
       left: 0;
@@ -444,7 +456,7 @@
         bottom: 50%
       }
 
-      & span {
+      span {
         transform: scale(0);
       }
     }
@@ -466,7 +478,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1240px) {
   .header {
     &__container {
       @include container-full(1.94rem);
@@ -486,8 +498,8 @@
       margin-top: 52px;
       gap: 0;
 
-      & li {
-        @include fonts(35px, 59px, -0.03em);
+      li {
+        @include fonts(35, 59);
       }
     }
 
@@ -531,9 +543,10 @@
       border: 1px solid $colorVioletTwo;
       justify-content: normal;
 
-      & span:nth-child(1) {
+      span:nth-child(1) {
         padding-left: 127px;
-        @include fonts(22px, 22px, -0.02em);
+        @include fonts(22, 22);
+        @include letter(-0.02em);
         font-weight: $fontWeightSemiBold;
 
         &::first-letter {
@@ -541,7 +554,7 @@
         }
       }
 
-      & span:nth-child(2) {
+      span:nth-child(2) {
         background-image: url("/assets/img/arrowLeft.svg");
         display: block;
         width: 30px;
@@ -573,7 +586,6 @@
   left: 0;
   bottom: 0;
 
-
   video {
     width: 100%;
     height: 100%;
@@ -587,21 +599,53 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .section__video {
+    width: 163%;
+    height: 51%;
+    top: 493px;
+    left: -503px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section__video {
+    width: 187%;
+    height: 65%;
+    top: 493px;
+    left: -463px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .section__video {
-    width: 219%;
-    overflow: visible;
-    height: 36%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    width: 205%;
+    height: 70%;
+    top: -93px;
+    left: -34px;
+
 
     video {
-
+      width: 189%;
+      height: 100%;
+      top: -129px;
+      left: -41%;
+      rotate: 16deg;
     }
   }
 }
+
+
+@media screen and (max-width: 400px) {
+  .section__video {
+    width: 219%;
+    height: 48%;
+    top: 0;
+    left: 0;
+
+  }
+}
+
 
 /* banner */
 .banner {
@@ -621,7 +665,8 @@
     margin-bottom: 27px;
     font-weight: $fontWeightSemiBold;
     color: $colorWhite;
-    @include fonts(30px, 33.9px, -0.04em);
+    @include fonts(30, 33.9);
+    @include letter(-0.04em);
   }
 
 
@@ -630,7 +675,8 @@
     margin-bottom: 16px;
     color: transparent;
     text-align: left;
-    @include fonts(102px, 97px, -0.02em);
+    @include fonts(102, 97);
+    @include letter(-0.02em);
     font-weight: $fontWeightMedium;
     background: $gradient-four;
     -webkit-background-clip: text;
@@ -667,7 +713,7 @@
 
     &__title {
       width: 76%;
-      @include fonts(85px, 81px, -0.02em);
+      @include fonts(85, 81);
     }
 
     &__text {
@@ -698,13 +744,13 @@
     &__title {
       margin-top: 0;
       width: 100%;
-      @include fonts(56px, 55px, -0.02em);
+      @include fonts(56, 55);
     }
 
     &__text {
       margin-top: 67px;
       margin-bottom: 19px;
-      @include fonts(18.34px, 20.72px, -0.04em);
+      @include fonts(18.34, 20.72);
     }
 
     &__img {
@@ -739,13 +785,14 @@
     padding: 73px 150px 0;
     max-height: 862px;
 
-    & h2 {
+    h2 {
       position: absolute;
       z-index: 5;
       top: 0;
       margin: 0 auto;
       font-weight: $fontWeightLight;
-      @include fonts(70px, 79.1px, -0.04em);
+      @include fonts(70, 79.1);
+      @include letter(-0.04em);
       text-align: center;
       color: transparent;
       background: $gradient-four;
@@ -764,7 +811,7 @@
     height: 90px;
     background: linear-gradient(180deg, #5A2FED 0%, #8F00FF 100%);
 
-    & span {
+    span {
       background-image: url("/assets/img/video/Polygon 3.svg");
       display: block;
       margin: 0 auto;
@@ -804,19 +851,19 @@
     height: 100%;
     object-fit: cover;
 
-    &:nth-child(1) {
+    :nth-child(1) {
       height: 100%;
       width: 100%;
       z-index: -1;
     }
 
-    &:nth-child(2) {
+    :nth-child(2) {
       height: 84%;
       width: 94%;
       z-index: 4;
     }
 
-    &:nth-child(3) {
+    :nth-child(3) {
       height: 85%;
       width: 100%;
       z-index: 3;
@@ -861,8 +908,8 @@
     &__container {
       padding: 124px 0 0;
 
-      & h2 {
-        @include fonts(49.88px, 56.36px, -0.04em);
+      h2 {
+        @include fonts(49.88, 56.36);
       }
     }
 
@@ -870,7 +917,7 @@
       width: 120px;
       height: 120px;
 
-      & span {
+      span {
         width: 45px;
         height: 54px;
       }
@@ -898,15 +945,15 @@
       max-height: 480px;
       padding-top: 60px;
 
-      & h2 {
-        @include fonts(24px, 30.24px, -0.04em);
+      h2 {
+        @include fonts(24, 30.24);
       }
     }
 
     &__button {
       display: none;
 
-      & span {
+      span {
         width: 22px;
         height: 25px;
       }
@@ -983,7 +1030,7 @@
     justify-content: space-between;
     align-items: center;
 
-    & p {
+    p {
       @include fontsSize15();
       margin-left: 56px;
       width: 115px;
@@ -1044,36 +1091,40 @@
       transform: translate3d(0, 0, 0);
     }
 
-    & h4 {
+    h4 {
       font-weight: $fontWeightLight;
-      @include fonts(80px, 74.4px, -0.04em);
+      @include fonts(80, 74.4);
+      @include letter(-0.04em);
       color: $colorWhite;
     }
 
-    & span {
+    span {
       font-weight: $fontWeightRegular;
-      @include fonts(20px, 20.6px, -0.04em);
+      @include fonts(20, 20.6);
+      @include letter(-0.04em);
     }
   }
 
   &__info {
     @include flex-column;
 
-    & h2 {
+    h2 {
       font-weight: $fontWeightLight;
-      @include fonts(250px, 232.5px, -0.04em);
+      @include fonts(250, 232.5);
+      @include letter(-0.04em);
       color: $colorWhite;
       margin-left: 56px;
       margin-bottom: 21px;
       z-index: 1;
     }
 
-    & p {
+    p {
       z-index: 1;
       margin-left: 83px;
       color: $colorWhite;
       font-weight: $fontWeightRegular;
-      @include fonts(40px, 41.2px, -0.04em);
+      @include fonts(40, 41.2);
+      @include letter(-0.04em);
       width: 256px;
     }
   }
@@ -1083,16 +1134,18 @@
     margin-bottom: 72px;
     position: relative;
 
-    & h4 {
+    h4 {
       font-weight: $fontWeightMedium;
-      @include fonts(60px, 55.8px, -0.04em);
+      @include fonts(60, 55.8);
+      @include letter(-0.04em);
       color: $colorWhite;
     }
 
-    & span {
+    span {
       padding-top: 15px;
       font-weight: $fontWeightRegular;
-      @include fonts(15px, 15.45px, -0.04em);
+      @include fonts(15, 15.45);
+      @include letter(-0.04em);
       color: $colorGrayFour;
     }
   }
@@ -1106,8 +1159,8 @@
     }
 
     &__group {
-      & p {
-        @include fonts(14px, 14.42px, -0.04em);
+      p {
+        @include fonts(14, 14.42);
         margin-left: 56px;
       }
     }
@@ -1122,28 +1175,29 @@
       padding: 24px 16px;
       border-radius: 22.5px;
 
-      & h4 {
-        @include fonts(44.88px, 41.74px, -0.04em);
+      h4 {
+        @include fonts(44.88, 41.74);
       }
 
-      & span {
-        @include fonts(17px, 17.51px, -0.04em);
+      span {
+        @include fonts(17, 17.51);
       }
     }
 
     &__info {
       @include flex-column;
 
-      & h2 {
-        @include fonts(125px, 116.25px, -0.04em);
+      h2 {
+        @include fonts(125, 116.25);
         color: $colorWhite;
         margin-bottom: 11px;
       }
 
-      & p {
+      p {
         margin-left: 56px;
         font-weight: $fontWeightRegular;
-        @include fonts(29px, 29.87px, -0.02em);
+        @include fonts(29, 29.87);
+        @include letter(-0.02em);
         width: 256px;
       }
     }
@@ -1152,7 +1206,7 @@
       margin-bottom: 51px;
       height: 55px;
 
-      & span {
+      span {
         display: none;
       }
     }
@@ -1162,7 +1216,7 @@
 
 @media screen and (max-width: 760px) {
   .numbers {
-    & img {
+    img {
       transform: scale(1.6);
       top: 146px;
     }
@@ -1176,7 +1230,7 @@
     &__group {
       justify-content: center;
 
-      & p {
+      p {
         display: none;
       }
     }
@@ -1191,28 +1245,28 @@
       gap: 49px;
       padding: 19px 14px;
 
-      & h4 {
-        @include fonts(36.85px, 34.27px, -0.04em);
+      h4 {
+        @include fonts(36.85, 34.27);
       }
 
-      & span {
-        @include fonts(12px, 12.36px, -0.04em);
+      span {
+        @include fonts(12, 12.36);
       }
     }
 
     &__info {
       @include flex-column;
 
-      & h2 {
-        @include fonts(90px, 83.7px, -0.04em);
+      h2 {
+        @include fonts(90, 83.7);
         width: 100%;
         margin-bottom: 0;
         margin-left: 9px;
       }
 
-      & p {
+      p {
         margin-left: 9px;
-        @include fonts(16px, 16.48px, -0.04em);
+        @include fonts(16, 16.48);
         width: 130px;
       }
     }
@@ -1220,11 +1274,11 @@
     &__row {
       margin-bottom: 31px;
 
-      & h4 {
-        @include fonts(37.71px, 35.07px, -0.04em);
+      h4 {
+        @include fonts(37.71, 35.07);
       }
 
-      & span {
+      span {
         display: none;
       }
 
@@ -1253,13 +1307,14 @@
     position: relative;
     margin-bottom: 94px;
 
-    & h4 {
+    h4 {
       font-weight: $fontWeightSemiBold;
-      @include fonts(70px, 65.1px, -0.04em);
+      @include fonts(70, 65.1);
+      @include letter(-0.04em);
       color: $colorWhite;
     }
 
-    & span {
+    span {
       @include fontsSize15;
       color: $colorGrayFour;
     }
@@ -1273,7 +1328,7 @@
     justify-content: flex-end;
     position: relative;
 
-    & img {
+    img {
       z-index: -1;
       max-width: 100%;
       object-fit: contain;
@@ -1289,13 +1344,14 @@
     &_two {
       justify-content: flex-start;
 
-      & img {
+      img {
         right: -141px;
       }
     }
   }
 
   &__block {
+    margin: auto 0 0;
     z-index: 2;
     position: relative;
     width: 48.5%;
@@ -1309,9 +1365,10 @@
       border: none;
     }
 
-    & h2 {
+    h2 {
       font-weight: $fontWeightLight;
-      @include fonts(130px, 120.9px, -0.04em);
+      @include fonts(130, 120.9);
+      @include letter(-0.04em);
       color: transparent;
       background: $gradient-four;
       -webkit-background-clip: text;
@@ -1322,28 +1379,37 @@
     gap: 40px;
     @include flex-row;
 
-    & h3 {
+    h3 {
       font-weight: $fontWeightRegular;
-      @include fonts(40px, 37.2px, -0.04em);
+      @include fonts(40, 37.2);
+      @include letter(-0.04em);
       color: $colorWhite;
     }
 
-    & span {
+    span {
       font-weight: $fontWeightLight;
       color: $colorGrayTwo;
     }
 
-    & p {
+    p {
       width: 50%;
       //font-family: SF Pro Text;
       font-weight: $fontWeightLight;
-      @include fonts(18px, 18.54px, -0.04em);
+      @include fonts(18, 18.54);
+      @include letter(-0.04em);
       color: $colorGraySix;
     }
   }
 
 }
 
+
+
+@media screen  and (max-width: 1400px){
+  .benefits__block h2{
+    @include fonts(110, 110.9);
+  }
+}
 @media screen and (max-width: 1200px) {
   .benefits {
     &__container {
@@ -1353,12 +1419,12 @@
     &__row {
       margin-bottom: 26px;
 
-      & h4 {
+      h4 {
         font-weight: $fontWeightMedium;
-        @include fonts(60px, 55.8px, -0.04em);
+        @include fonts(60, 55.8);
       }
 
-      & span {
+      span {
         display: none;
       }
     }
@@ -1366,7 +1432,7 @@
     &__info {
       margin-bottom: 92px;
 
-      & img {
+      img {
         display: flex;
         justify-content: center;
         max-width: 80%;
@@ -1380,19 +1446,19 @@
       padding-right: 22px;
       padding-top: 56px;
 
-      & h2 {
-        @include fonts(60px, 55.8px, -0.04em);
+      h2 {
+        @include fonts(60, 55.8);
       }
     }
 
     &__group {
-      & h3 {
-        @include fonts(20.85px, 21.48px, -0.04em);
+      h3 {
+        @include fonts(20.85, 21.48);
       }
 
-      & p {
+      p {
         //font-family: SF Pro Text;
-        @include fonts(14px, 14.42px, -0.03em);
+        @include fonts(14, 14.42);
       }
     }
   }
@@ -1420,7 +1486,7 @@
         padding-top: 0;
       }
 
-      & img {
+      img {
         top: 0;
         left: 0;
         position: relative;
@@ -1430,8 +1496,8 @@
     &__row {
       margin-bottom: 15px;
 
-      & h4 {
-        @include fonts(37.71px, 35.07px, -0.04em);
+      h4 {
+        @include fonts(37.71, 35.07);
       }
     }
 
@@ -1445,18 +1511,18 @@
       padding-left: 0;
       border: none;
 
-      & h2 {
-        @include fonts(55px, 51.15px, -0.04em);
+      h2 {
+        @include fonts(55, 51.15);
       }
     }
 
     &__group {
-      & h3 {
-        @include fonts(18px, 16.74px, -0.04em);
+      h3 {
+        @include fonts(18, 16.74);
       }
 
-      & p {
-        @include fonts(12px, 12.36px, -0.04em);
+      p {
+        @include fonts(12, 12.36);
       }
     }
   }
@@ -1479,20 +1545,22 @@
     position: relative;
     height: 169px;
 
-    & h2 {
+    h2 {
       width: 60%;
       color: $colorWhite;
       font-weight: $fontWeightMedium;
-      @include fonts(90px, 92.7px, -0.04em);
+      @include fonts(90, 92.7);
+      @include letter(-0.04em);
     }
 
-    & p {
+    p {
       color: transparent;
       background: $gradient-four;
       -webkit-background-clip: text;
       width: 40%;
       font-weight: $fontWeightMedium;
-      @include fonts(40px, 40px, -0.03em);
+      @include fonts(40, 40);
+      @include letter(-0.03em);
     }
   }
 
@@ -1527,9 +1595,10 @@
     }
   }
 
-  & span {
+  span {
     font-weight: $fontWeightMedium;
-    @include fonts(12px, 15px, -0.04em);
+    @include fonts(12, 15);
+    @include letter(-0.04em);
     color: $colorVioletEight;
   }
 }
@@ -1542,15 +1611,16 @@
     }
 
     &__group {
-      & h2 {
+      h2 {
         width: 100%;
-        @include fonts(70px, 72.1px, -0.04em);
+        @include fonts(70, 72.1);
       }
 
-      & p {
+      p {
         width: 100%;
         font-weight: $fontWeightMedium;
-        @include fonts(30px, 30px, -0.01em);
+        @include fonts(30, 30);
+        @include letter(-0.01em);
       }
     }
 
@@ -1571,7 +1641,7 @@
       height: 130px;
     }
 
-    & span {
+    span {
       display: none;
     }
   }
@@ -1585,12 +1655,13 @@
     }
 
     &__group {
-      & h2 {
-        @include fonts(40px, 37.2px, -0.04em);
+      h2 {
+        @include fonts(40, 37.2);
       }
 
-      & p {
-        @include fonts(23px, 23px, -0.02em);
+      p {
+        @include fonts(23, 23);
+        @include letter(-0.02em);
       }
     }
 
@@ -1626,16 +1697,17 @@
     padding: 41px 25px 102px;
     @include flex-column;
 
-    & p {
+    p {
       @include fontsSize15;
     }
 
-    & h2 {
+    h2 {
       height: 266px;
       color: transparent;
       background: $gradient-five;
       font-weight: $fontWeightMedium;
-      @include fonts(100px, 93px, -0.04em);
+      @include fonts(100, 93);
+      @include letter(-0.04em);
       text-align: center;
       margin: 107px auto 236px;
       width: 59%;
@@ -1651,14 +1723,14 @@
       padding-top: 119px;
       padding-bottom: 84px;
 
-      & p {
+       p {
         display: none;
       }
 
-      & h2 {
+       h2 {
         height: 214px;
         font-weight: $fontWeightRegular;
-        @include fonts(80.47px, 74.84px, -0.04em);
+        @include fonts(80.47, 74.84);
         margin-top: 0;
         margin-bottom: 189px;
         width: 70%;
@@ -1673,10 +1745,11 @@
     &__container {
       padding: 46px 0 60px;
 
-      & h2 {
+      h2 {
         height: 102px;
         font-weight: $fontWeightMedium;
-        @include fonts(40px, 37.6px, -0.03em);
+        @include fonts(40, 37.6);
+        @include letter(-0.03em);
         margin-top: 0;
         margin-bottom: 118px;
         width: 100%;
@@ -1710,27 +1783,30 @@
   &__text {
     z-index: 2;
     font-weight: $fontWeightLight;
-    @include fonts(18px, 18.54px, -0.04em);
+    @include fonts(18, 18.54);
+    @include letter(-0.04em);
     color: $colorGrey;
     text-align: right;
     margin-bottom: 27px;
     margin-left: auto;
   }
 
-  & h2 {
+  h2 {
     font-weight: $fontWeightRegular;
-    @include fonts(130px, 120.9px, -0.04em);
+    @include fonts(130, 120.9);
+    @include letter(-0.04em);
     color: $colorWhite;
     z-index: 2;
   }
 
-  & p {
+  p {
     margin-top: 168px;
     margin-left: 20px;
     position: relative;
     color: $colorWhite;
     font-weight: $fontWeightRegular;
-    @include fonts(40px, 48px, -0.04em);
+    @include fonts(40, 48);
+    @include letter(-0.04em);
     z-index: 2;
     margin-bottom: 118px;
     width: 414px;
@@ -1759,14 +1835,14 @@
       display: none;
     }
 
-    & h2 {
+    h2 {
       font-weight: $fontWeightMedium;
-      @include fonts(70px, 65.1px, -0.04em);
+      @include fonts(70, 65.1);
     }
 
-    & p {
+    p {
       margin-top: 182px;
-      @include fonts(30px, 36px, -0.04em);
+      @include fonts(30, 36);
       margin-bottom: 150px;
       width: 245px;
     }
@@ -1785,15 +1861,15 @@
       padding-bottom: 55px;
     }
 
-    & h2 {
+     h2 {
       padding: 12px 0 0;
-      @include fonts(40px, 37.2px, -0.04em);
+      @include fonts(40, 37.2);
       text-transform: lowercase;
     }
 
-    & p {
+    p {
       margin-top: 352px;
-      @include fonts(22px, 26.4px, -0.04em);
+      @include fonts(22, 26.4);
       margin-bottom: 27px;
       width: auto;
     }
@@ -1801,6 +1877,42 @@
 }
 
 /* /trade */
+
+.social__item {
+  position: relative;
+  overflow: hidden;
+  & > svg {
+    transition: all 600ms;
+  }
+  span {
+    font-weight: $fontWeightMedium;
+    @include fonts(10, 10);
+    @include letter(-0.05em);
+    opacity: 0;
+  }
+  &-hover {
+    position: absolute;
+    left: 100%;
+    width: 100%;
+    top: 0;
+    transition: all 500ms;
+    path {
+      fill: #5F29B7;
+    }
+  }
+
+  &:hover {
+    & > svg {
+      opacity: 0;
+    }
+    span {
+      opacity: 1;
+    }
+    .social__item-hover {
+      left: 0;
+    }
+  }
+}
 
 
 /* footer */
@@ -1831,17 +1943,30 @@
   &__ul {
     @include flex-column;
 
-    & li {
+    li {
       font-weight: $fontWeightRegular;
-      @include fonts(13px, 13px, -0.01em);
+      @include fonts(13, 13);
+      @include letter(-0.01em);
       color: $colorGrey;
 
-      & img {
+      img {
+        width: 42px;
+        height: 42px;
         object-fit: cover;
       }
     }
   }
-
+  &__social {
+    @include flex-row;
+    margin-top: 32px;
+    margin-bottom: 69px;
+    gap: 9px;
+    a {
+      @include flex-column;
+      @include flex-center;
+      gap: 6px;
+    }
+  }
   &__group {
     @include flex-column;
 
@@ -1851,18 +1976,18 @@
     }
 
     &_two {
-      & ul {
+       ul {
         @include flex-row;
         margin-top: 32px;
         margin-bottom: 69px;
         gap: 9px;
 
-        & a {
+         a {
           @include flex-column;
           @include flex-center;
           gap: 6px;
 
-          & img:hover {
+           img:hover {
             cursor: pointer;
             opacity: 0.8;
           }
@@ -1873,7 +1998,7 @@
     &_three, &_four {
       gap: 25px;
 
-      & ul {
+       ul {
         gap: 10px;
       }
     }
@@ -1882,25 +2007,18 @@
       gap: 30px;
     }
 
-    & h3 {
+     h3 {
       color: $colorWhite;
-      @include fonts(23px, 23px, -0.03em);
+      @include fonts(23, 23);
+      @include letter(-0.03em);
     }
 
-    & p {
+     p {
       font-weight: $fontWeightRegular;
-      @include fonts(17px, 17px, -0.04em);
+      @include fonts(17, 17);
+      @include letter(-0.04em);
       color: $colorGrey;
     }
-
-    & span {
-      font-weight: $fontWeightMedium;
-      @include fonts(10px, 10px, -0.05em);
-    }
-  }
-
-  &__span {
-    color: $colorVioletFive;
   }
 
   &__text {
@@ -1909,7 +2027,8 @@
 
   &__container p {
     font-weight: $fontWeightRegular;
-    @include fonts(17px, 17px, -0.04em);
+    @include fonts(17, 17);
+    @include letter(-0.04em);
     color: $colorGrey;
   }
 
@@ -1954,7 +2073,7 @@
       flex-wrap: wrap;
       gap: 24px;
 
-      & ul {
+       ul {
         margin: 0;
       }
     }
@@ -1997,3 +2116,219 @@
 }
 
 /* /footer */
+
+
+
+/* work */
+.work {
+  &__container {
+    padding: 44px 25px 141px;
+    @include flex-column;
+  }
+  &__row {
+    position: relative;
+    height: 254px;
+    margin-bottom: 73px;
+    h2 {
+      position: relative;
+      width: 60%;
+      //margin-bottom: 16px;
+      color: transparent;
+      text-align: left;
+      @include fonts(90, 92.7);
+      @include letter(-0.02em);
+      font-weight: $fontWeightRegular;
+      background: $gradient-four;
+      -webkit-background-clip: text;
+    }
+  }
+  &__group {
+    margin-top: 160px;
+    @include flex-row;
+    gap: 22px;
+    }
+  &__button {
+    @include flex-center;
+    border: 1px solid $colorGraySeven;
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    background-color: $colorBlack;
+     span {
+       background-image: url("/assets/img/vectorWork.svg");
+       background-repeat: no-repeat;
+       background-size: cover;
+       height: 15px;
+       width: 25px;
+     }
+    &_two {
+      width: 195px;
+      border-radius: 70px;
+      span {
+        width: 55px;
+        background-image: url("/assets/img/Vector.svg");
+      }
+    }
+    &:hover {
+      border-color: $coloVioletTen;
+      cursor: pointer;
+    }
+  }
+  &__items {
+    width: 100%;
+    @include flex-row;
+    padding-left: 168px;
+    gap: 30px;
+  }
+  &__item {
+    @include flex-column;
+    padding: 49px 39px 36px;
+    border: 1px solid $colorVioletEleven;
+    border-radius: 40px;
+    width: 343px;
+    height: 455px;
+    h5 {
+      font-weight: $fontWeightMedium;
+      @include fonts(34, 31.62);
+      @include letter(-0.04em);
+      color: $colorWhite;
+      margin-bottom: 38px;
+    }
+    img {
+      width: 115px;
+      height: 106px;
+    }
+    p {
+      margin-top: 132px;
+      font-weight: $fontWeightLight;
+      @include fonts(16, 20);
+      @include letter(-0.04em);
+      color: $colorGrayEight;
+    }
+  }
+  &__scrollbar {
+    opacity: 1;
+    margin-top: 53px;
+    margin-left: 168px;
+    height: 5px;
+    width: 80%;
+    overflow: auto;
+    &-drag {
+      position: relative;
+      background-color: $colorVioletEleven;
+      height: 100%;
+      width: 631px;
+    }
+  }
+}
+@media screen and (max-width: 1350px) {
+  .work h2 {
+    @include fonts(71, 73.13);
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .work {
+    &__container {
+      padding-left: 17px;
+      padding-right: 17px;
+      padding-bottom: 48px;
+    }
+
+    &__row {
+      height: 146px;
+      margin-bottom: 50px;
+
+      h2 {
+        width: 100%;
+      }
+    }
+
+    &__group {
+      display: none;
+    }
+
+    &__items {
+      padding-left: 0;
+    }
+    &__item {
+      @include flex-column;
+      padding: 46px 37px 40px;
+      width: 326px;
+      height: 432px;
+
+      h5 {
+        @include fonts(32, 30);
+        margin-bottom: 36px;
+      }
+
+      img {
+        width: 115px;
+        height: 106px;
+      }
+
+      p {
+        margin-top: 114px;
+        @include fonts(17, 21);
+      }
+    }
+
+    &__scrollbar {
+      margin-top: 40px;
+      margin-left: 14px;
+      &-drag {
+        width: 510px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .work {
+    &__container {
+      padding: 36px 24px 61px;
+    }
+
+    &__row {
+      height: 100px;
+      margin-bottom: 43px;
+
+      h2 {
+        @include fonts(36, 37);
+        @include letter(0.01em);
+        width: 100%;
+      }
+    }
+
+    &__item {
+      padding: 17px;
+      width: 150px;
+      height: 235px;
+
+      h5 {
+        @include fonts(16, 15);
+        margin-bottom: 15px;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      p {
+        margin-top: 63px;
+        @include fonts(12, 15);
+      }
+    }
+
+    &__scrollbar {
+      margin-top: 20px;
+      margin-left: 0;
+      &-drag {
+        width: 181px;
+      }
+    }
+  }
+}
+/* /work */

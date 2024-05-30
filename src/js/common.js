@@ -18,4 +18,3 @@ video.addEventListener('click', toggleVideo);
 crossIcon.addEventListener('click', toggleCross);
 
 
-
