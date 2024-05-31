@@ -1,9 +1,9 @@
 /* eslint-disable */
 import Swiper from "swiper";
-import {Navigation, Scrollbar} from "swiper/modules";
+import {EffectCoverflow, Navigation, Scrollbar} from "swiper/modules";
 
 document.addEventListener('DOMContentLoaded', function () {
-  var swiper = new Swiper(".swiper-container", {
+ new Swiper(".swiper-container", {
     modules: [Navigation, Scrollbar],
     loop: true,
     slidesPerView: "auto",
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     allowTouchMove: true,
 
     navigation: {
-      nextEl: ".work__button_two",
-      prevEl: ".work__button_one",
+      nextEl: ".work__button_next",
+      prevEl: ".work__button_prev",
     },
     scrollbar: {
       el: '.work__scrollbar',
@@ -29,4 +29,60 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     autoWidth: true,
   });
+
+
+
+  new Swiper(".swiper", {
+    modules: [Navigation, Scrollbar, EffectCoverflow],
+    loop: true,
+    slidesPerView: 'auto',
+    allowTouchMove: true,
+    effect:"coverflow",
+    speed: 800,
+    breakpoints: {
+      320: {
+        direction: 'horizontal',
+      },
+      1200: {
+        direction: 'vertical',
+      }
+    },
+    coverflowEffect: {
+      rotate: 0,
+      scale: 1.1,
+      stretch: 200,
+      depth: 500,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+      nextEl: ".features__button_next",
+      prevEl: ".features__button_prev",
+    },
+    on: {
+      slideChange: function () {
+        var activeIndex = this.activeIndex;
+        var slides = document.querySelectorAll('.swiper-slide');
+        var featuresSpans= document.querySelectorAll(".features__item span");
+        var featuresTexts= document.querySelectorAll(".features__item h4");
+
+        console.log(featuresTexts);
+        slides.forEach(function (slide, index) {
+          if (index === activeIndex) {
+            slide.classList.add('swiper-slide-active');
+            featuresSpans[index].classList.add('features__span');
+            featuresTexts[index].classList.add('features__text');
+          } else {
+            slide.classList.remove('swiper-slide-active');
+            if (featuresSpans[index]) {
+              featuresSpans[index].classList.remove('features__span');
+              featuresTexts[index].classList.remove('features__text');
+            }
+          }
+        });
+      }
+    }
+  });
+
+
 });

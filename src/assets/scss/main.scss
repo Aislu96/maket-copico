@@ -39,11 +39,10 @@
     @include fonts(45, 41.85);
     @include letter(-0.04em);
     font-weight: $fontWeightSemiBold;
-    color: $colorWhite;
   }
 
   span:nth-child(2) {
-    z-index: 2;
+    z-index: 1;
     background-image: url("/assets/img/Vector.svg");
     display: block;
     width: 61px;
@@ -664,7 +663,6 @@
     margin-top: 145px;
     margin-bottom: 27px;
     font-weight: $fontWeightSemiBold;
-    color: $colorWhite;
     @include fonts(30, 33.9);
     @include letter(-0.04em);
   }
@@ -696,6 +694,7 @@
     @include flex-center;
     border-radius: 30px;
     background-color: $colorBlackTwo;
+    border: none;
 
     &:hover {
       border: 1px solid $colorGrayTwo;
@@ -1095,7 +1094,6 @@
       font-weight: $fontWeightLight;
       @include fonts(80, 74.4);
       @include letter(-0.04em);
-      color: $colorWhite;
     }
 
     span {
@@ -1112,7 +1110,6 @@
       font-weight: $fontWeightLight;
       @include fonts(250, 232.5);
       @include letter(-0.04em);
-      color: $colorWhite;
       margin-left: 56px;
       margin-bottom: 21px;
       z-index: 1;
@@ -1121,7 +1118,6 @@
     p {
       z-index: 1;
       margin-left: 83px;
-      color: $colorWhite;
       font-weight: $fontWeightRegular;
       @include fonts(40, 41.2);
       @include letter(-0.04em);
@@ -1138,7 +1134,6 @@
       font-weight: $fontWeightMedium;
       @include fonts(60, 55.8);
       @include letter(-0.04em);
-      color: $colorWhite;
     }
 
     span {
@@ -1189,7 +1184,6 @@
 
       h2 {
         @include fonts(125, 116.25);
-        color: $colorWhite;
         margin-bottom: 11px;
       }
 
@@ -1311,7 +1305,6 @@
       font-weight: $fontWeightSemiBold;
       @include fonts(70, 65.1);
       @include letter(-0.04em);
-      color: $colorWhite;
     }
 
     span {
@@ -1383,7 +1376,6 @@
       font-weight: $fontWeightRegular;
       @include fonts(40, 37.2);
       @include letter(-0.04em);
-      color: $colorWhite;
     }
 
     span {
@@ -1547,7 +1539,6 @@
 
     h2 {
       width: 60%;
-      color: $colorWhite;
       font-weight: $fontWeightMedium;
       @include fonts(90, 92.7);
       @include letter(-0.04em);
@@ -1795,7 +1786,6 @@
     font-weight: $fontWeightRegular;
     @include fonts(130, 120.9);
     @include letter(-0.04em);
-    color: $colorWhite;
     z-index: 2;
   }
 
@@ -1803,7 +1793,6 @@
     margin-top: 168px;
     margin-left: 20px;
     position: relative;
-    color: $colorWhite;
     font-weight: $fontWeightRegular;
     @include fonts(40, 48);
     @include letter(-0.04em);
@@ -2008,7 +1997,6 @@
     }
 
      h3 {
-      color: $colorWhite;
       @include fonts(23, 23);
       @include letter(-0.03em);
     }
@@ -2161,7 +2149,7 @@
        height: 15px;
        width: 25px;
      }
-    &_two {
+    &_next {
       width: 195px;
       border-radius: 70px;
       span {
@@ -2191,7 +2179,6 @@
       font-weight: $fontWeightMedium;
       @include fonts(34, 31.62);
       @include letter(-0.04em);
-      color: $colorWhite;
       margin-bottom: 38px;
     }
     img {
@@ -2332,3 +2319,305 @@
   }
 }
 /* /work */
+
+
+/* features */
+
+.features {
+  background: $gradient-fix;
+  border-radius: 41px;
+  &__container {
+    @include flex-column;
+    padding: 49px 45px 75px;
+  }
+  &__group {
+    @include flex-row;
+    justify-content: space-between;
+    h4 {
+      @include letter(-0.04em);
+      @include fonts(70, 65.1);
+      font-weight: $fontWeightSemiBold;
+    }
+    span {
+      font-weight: $fontWeightRegular;
+      @include letter(-0.04em);
+      @include fonts(15, 15.45);
+    }
+  }
+
+  &__items {
+    margin-top: 163px;
+    margin-left: 62px;
+    margin-bottom: 182px;
+    span {
+      width: 35px;
+      margin-left: 3px;
+      height: 3px;
+    }
+
+    li {
+      @include flex-row;
+      align-items: center;
+      gap: 3px;
+    }
+    h4 {
+      font-weight: $fontWeightMedium;
+      @include fonts(24, 36);
+      @include letter(-0.01em);
+      color: $colorVioletNine;
+    }
+  }
+
+  &__info-btn {
+    width: 185px;
+    height: 56px;
+    @include flex-center;
+    gap: 17px;
+    background: transparent;
+    border: 1px solid $colorVioletNine;
+    border-radius: 45px;
+    span:nth-child(1) {
+      font-weight: $fontWeightSemiBold;
+      @include fonts(15.12, 18.15);
+      @include letter(-0.04em);
+    }
+    span:nth-child(2) {
+      background-image: url('/assets/img/VectorFeatures.svg');
+      width: 35px;
+      height: 10.53px;
+    }
+    &:hover {
+      border: 1px solid $colorWhite;
+      cursor: pointer;
+    }
+  }
+
+  &__block {
+    @include flex-row;
+  }
+
+  &__text {
+    font-weight: $fontWeightSemiBold;
+    color: $colorWhite !important;
+  }
+  &__span {
+    background: $colorWhite;
+  }
+  &__btn-swiper {
+    @include flex-column;
+    gap: 16px;
+    @include flex-center;
+  }
+
+  &__button {
+    position: relative;
+    height: 125px;
+    width: 60px;
+    border-radius: 45px;
+    border: 1px solid $colorVioletThirteen;
+    background: transparent;
+    @include flex-center;
+
+    span {
+      background-image: url('/assets/img/VectorFeatures.svg');
+      width: 35px;
+      height: 10px;
+      rotate: -90deg;
+    }
+    &_next {
+      span {
+        rotate: 90deg !important;
+      }
+    }
+  }
+  &__border {
+    position: absolute;
+    height: 80px;
+    left: -1px;
+    top:0;
+    width: 60px;
+    border-radius: 45px 45px 0 0;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      border-top: 1px solid $colorWhite;
+      border-left: 1px solid $colorWhite;
+      border-right: 1px solid $colorWhite;
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+}
+
+/* /features */
+
+
+
+/*swiper */
+.swiper {
+  @include flex-center;
+  &__item {
+    border-radius: 41px;
+    padding: 76px 55px 61px;
+    border: 1px solid $colorVioletThirteen;
+    @include flex-row;
+    gap: 21px;
+    img {
+      width: 120px;
+      height: 116px;
+    }
+  }
+  &__div {
+    @include flex-row;
+  }
+  &__items {
+    width: 622px;
+    height: 439px;
+  }
+  &__info {
+    justify-content: space-between;
+    @include flex-column;
+    h5 {
+      font-weight: $fontWeightRegular;
+      @include fonts(40, 38.8);
+      @include letter(-0.04em);
+    }
+    p {
+      font-weight: $fontWeightRegular;
+      @include fonts(15.88, 22.23);
+      @include letter(-0.02em);
+      color: #F5F5F5;
+    }
+  }
+  &-slide {
+    opacity: 0;
+    &-active, &-next, &-prev {
+      opacity: 1;
+    }
+    &-active {
+      z-index: 1;
+      background: $colorVioletTwelve;
+      transition: background;
+      border: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px){
+  .features {
+    &__container {
+      padding: 43px 45px 54px;
+    }
+    &__group {
+      h4 {
+        @include fonts(79, 74);
+      }
+      span {
+        display: none;
+      }
+    }
+
+    &__items {
+      display: none;
+    }
+
+    &__info-btn {
+      width: 230px;
+      height: 69px;
+      gap: 15px;
+      span:nth-child(1) {
+        @include fonts(22, 27);
+      }
+    }
+
+    &__span {
+      background: $colorWhite;
+    }
+    &__btn-swiper {
+     display: none;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px){
+  .swiper {
+    &__item {
+      padding: 54px 82px 44px 86px;
+      gap: 0;
+      img {
+        width: 147px;
+        height: 142px;
+      }
+    }
+    &__items {
+      width: 597px;
+      height: 655px;
+      margin: 100px auto 55px;
+    }
+    &__info {
+      h5 {
+        @include fonts(66.13, 54.89);
+      }
+      p {
+        @include fonts(25, 30.5);
+        @include letter(-0.03em);
+      }
+    }
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 600px){
+  .features {
+    &__container {
+      padding: 45px 14px 59px;
+    }
+    &__group {
+      h4 {
+        @include fonts(36, 33.8);
+      }
+    }
+
+    &__info-btn {
+      width: 133px;
+      height: 40px;
+      gap: 9px;
+      span:nth-child(1) {
+        @include fonts(13, 16);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  .swiper {
+    &__item {
+      padding: 25px;
+      img {
+        width: 66px;
+        height: 64px;
+      }
+    }
+    &__items {
+      width: 271px;
+      height: 320px;
+      margin: 50px 0 18px;
+    }
+    &__info {
+      h5 {
+        margin-left: 18px;
+        @include fonts(30, 25);
+      }
+      p {
+        @include fonts(12, 15);
+      }
+    }
+  }
+
+}
