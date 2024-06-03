@@ -13,7 +13,7 @@
   background-color: $colorBlack;
   width: 100%;
   margin: 0 auto;
-  min-width: 320px;
+  min-width: 375px;
   @include flex-column;
   box-sizing: border-box;
   position: relative;
@@ -79,7 +79,7 @@
 
 @media screen and (max-width: 1100px) {
   .button {
-    width: 545px;
+    width: 525px;
     height: 103px;
     background-color: $colorViolet;
     border-radius: 56px;
@@ -189,9 +189,9 @@
   position: absolute;
   height: 50px;
   border-radius: 20px 20px 0 0;
-  border-top: 2px solid transparent;
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
   border-bottom: none;
   background: linear-gradient(#000, #000) padding-box,
   $gradient-four border-box;
@@ -203,6 +203,10 @@
 
   &__trade {
     padding: 20px 20px 0;
+  }
+
+  &__stage {
+    padding: 20px 25px 0;
   }
 
   &__partners {
@@ -230,11 +234,15 @@
     padding-left: 21px;
     padding-right: 21px;
     margin-bottom: 51px;
-  }
 
-  .border-container__partners {
-    flex-direction: column;
-    gap: 24px;
+    &-container__partners {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &__stage {
+      padding: 35px 17px 0;
+    }
   }
 }
 
@@ -248,10 +256,15 @@
     &__block {
       display: none;
     }
+
     &__work {
       border: none;
       height: 0;
       padding: 0;
+    }
+
+    &__stage {
+      padding: 15px 13px 0;
     }
   }
 }
@@ -850,19 +863,19 @@
     height: 100%;
     object-fit: cover;
 
-    :nth-child(1) {
+    &:nth-child(1) {
       height: 100%;
       width: 100%;
       z-index: -1;
     }
 
-    :nth-child(2) {
+    &:nth-child(2) {
       height: 84%;
       width: 94%;
       z-index: 4;
     }
 
-    :nth-child(3) {
+    &:nth-child(3) {
       height: 85%;
       width: 100%;
       z-index: 3;
@@ -1320,14 +1333,16 @@
     @include flex-row;
     justify-content: flex-end;
     position: relative;
+    width: 100%;
+    height: auto;
 
     img {
       z-index: -1;
       max-width: 100%;
       object-fit: contain;
-      height: auto;
       position: absolute;
       top: -38px;
+      object-position: center;
     }
 
     &_one img, &_three img {
@@ -1353,6 +1368,7 @@
     padding-left: 36px;
     padding-right: 36px;
     padding-top: 61px;
+    height: 500px;
 
     &_non {
       border: none;
@@ -1396,12 +1412,12 @@
 }
 
 
-
-@media screen  and (max-width: 1400px){
-  .benefits__block h2{
+@media screen and (max-width: 1400px) {
+  .benefits__block h2 {
     @include fonts(110, 110.9);
   }
 }
+
 @media screen and (max-width: 1200px) {
   .benefits {
     &__container {
@@ -1421,18 +1437,24 @@
       }
     }
 
+
     &__info {
       margin-bottom: 92px;
+
+      &_two {
+        justify-content: flex-start;
+      }
 
       img {
         display: flex;
         justify-content: center;
         max-width: 80%;
+        right: -62px;
       }
     }
 
     &__block {
-      height: 500px;
+      height: 382px;
       gap: 84px;
       padding-left: 22px;
       padding-right: 22px;
@@ -1525,6 +1547,7 @@
 
 /* partners */
 .partners {
+  border-radius: 41px;
   background: $gradient-fix;
 
   &__container {
@@ -1714,11 +1737,11 @@
       padding-top: 119px;
       padding-bottom: 84px;
 
-       p {
+      p {
         display: none;
       }
 
-       h2 {
+      h2 {
         height: 214px;
         font-weight: $fontWeightRegular;
         @include fonts(80.47, 74.84);
@@ -1753,6 +1776,7 @@
 
 /* trade */
 .trade {
+  overflow: hidden;
   position: relative;
   padding: 71px 25px 0;
 
@@ -1807,7 +1831,6 @@
   .trade {
     padding: 60px 17px 0;
 
-
     &__row {
       height: 115px;
     }
@@ -1850,7 +1873,7 @@
       padding-bottom: 55px;
     }
 
-     h2 {
+    h2 {
       padding: 12px 0 0;
       @include fonts(40, 37.2);
       text-transform: lowercase;
@@ -1870,21 +1893,25 @@
 .social__item {
   position: relative;
   overflow: hidden;
+
   & > svg {
     transition: all 600ms;
   }
+
   span {
     font-weight: $fontWeightMedium;
     @include fonts(10, 10);
     @include letter(-0.05em);
     opacity: 0;
   }
+
   &-hover {
     position: absolute;
     left: 100%;
     width: 100%;
     top: 0;
     transition: all 500ms;
+
     path {
       fill: #5F29B7;
     }
@@ -1894,9 +1921,11 @@
     & > svg {
       opacity: 0;
     }
+
     span {
       opacity: 1;
     }
+
     .social__item-hover {
       left: 0;
     }
@@ -1945,17 +1974,20 @@
       }
     }
   }
+
   &__social {
     @include flex-row;
     margin-top: 32px;
     margin-bottom: 69px;
     gap: 9px;
+
     a {
       @include flex-column;
       @include flex-center;
       gap: 6px;
     }
   }
+
   &__group {
     @include flex-column;
 
@@ -1965,18 +1997,18 @@
     }
 
     &_two {
-       ul {
+      ul {
         @include flex-row;
         margin-top: 32px;
         margin-bottom: 69px;
         gap: 9px;
 
-         a {
+        a {
           @include flex-column;
           @include flex-center;
           gap: 6px;
 
-           img:hover {
+          img:hover {
             cursor: pointer;
             opacity: 0.8;
           }
@@ -1987,7 +2019,7 @@
     &_three, &_four {
       gap: 25px;
 
-       ul {
+      ul {
         gap: 10px;
       }
     }
@@ -1996,12 +2028,12 @@
       gap: 30px;
     }
 
-     h3 {
+    h3 {
       @include fonts(23, 23);
       @include letter(-0.03em);
     }
 
-     p {
+    p {
       font-weight: $fontWeightRegular;
       @include fonts(17, 17);
       @include letter(-0.04em);
@@ -2061,7 +2093,7 @@
       flex-wrap: wrap;
       gap: 24px;
 
-       ul {
+      ul {
         margin: 0;
       }
     }
@@ -2106,17 +2138,18 @@
 /* /footer */
 
 
-
 /* work */
 .work {
   &__container {
     padding: 44px 25px 141px;
     @include flex-column;
   }
+
   &__row {
     position: relative;
     height: 254px;
     margin-bottom: 73px;
+
     h2 {
       position: relative;
       width: 60%;
@@ -2130,11 +2163,13 @@
       -webkit-background-clip: text;
     }
   }
+
   &__group {
     margin-top: 160px;
     @include flex-row;
     gap: 22px;
-    }
+  }
+
   &__button {
     @include flex-center;
     border: 1px solid $colorGraySeven;
@@ -2142,32 +2177,38 @@
     height: 94px;
     border-radius: 50%;
     background-color: $colorBlack;
-     span {
-       background-image: url("/assets/img/vectorWork.svg");
-       background-repeat: no-repeat;
-       background-size: cover;
-       height: 15px;
-       width: 25px;
-     }
+
+    span {
+      background-image: url("/assets/img/vectorWork.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 15px;
+      width: 25px;
+    }
+
     &_next {
       width: 195px;
       border-radius: 70px;
+
       span {
         width: 55px;
         background-image: url("/assets/img/Vector.svg");
       }
     }
+
     &:hover {
       border-color: $coloVioletTen;
       cursor: pointer;
     }
   }
+
   &__items {
     width: 100%;
     @include flex-row;
     padding-left: 168px;
     gap: 30px;
   }
+
   &__item {
     @include flex-column;
     padding: 49px 39px 36px;
@@ -2175,16 +2216,19 @@
     border-radius: 40px;
     width: 343px;
     height: 455px;
+
     h5 {
       font-weight: $fontWeightMedium;
       @include fonts(34, 31.62);
       @include letter(-0.04em);
       margin-bottom: 38px;
     }
+
     img {
       width: 115px;
       height: 106px;
     }
+
     p {
       margin-top: 132px;
       font-weight: $fontWeightLight;
@@ -2193,6 +2237,7 @@
       color: $colorGrayEight;
     }
   }
+
   &__scrollbar {
     opacity: 1;
     margin-top: 53px;
@@ -2200,6 +2245,7 @@
     height: 5px;
     width: 80%;
     overflow: auto;
+
     &-drag {
       position: relative;
       background-color: $colorVioletEleven;
@@ -2208,6 +2254,7 @@
     }
   }
 }
+
 @media screen and (max-width: 1350px) {
   .work h2 {
     @include fonts(71, 73.13);
@@ -2239,6 +2286,7 @@
     &__items {
       padding-left: 0;
     }
+
     &__item {
       @include flex-column;
       padding: 46px 37px 40px;
@@ -2264,6 +2312,7 @@
     &__scrollbar {
       margin-top: 40px;
       margin-left: 14px;
+
       &-drag {
         width: 510px;
       }
@@ -2304,7 +2353,7 @@
       }
 
       p {
-        margin-top: 63px;
+        margin-top: 40px;
         @include fonts(12, 15);
       }
     }
@@ -2312,12 +2361,14 @@
     &__scrollbar {
       margin-top: 20px;
       margin-left: 0;
+
       &-drag {
         width: 181px;
       }
     }
   }
 }
+
 /* /work */
 
 
@@ -2326,18 +2377,23 @@
 .features {
   background: $gradient-fix;
   border-radius: 41px;
+  position: relative;
+
   &__container {
     @include flex-column;
     padding: 49px 45px 75px;
   }
+
   &__group {
     @include flex-row;
     justify-content: space-between;
+
     h4 {
       @include letter(-0.04em);
       @include fonts(70, 65.1);
       font-weight: $fontWeightSemiBold;
     }
+
     span {
       font-weight: $fontWeightRegular;
       @include letter(-0.04em);
@@ -2349,6 +2405,7 @@
     margin-top: 163px;
     margin-left: 62px;
     margin-bottom: 182px;
+
     span {
       width: 35px;
       margin-left: 3px;
@@ -2360,6 +2417,7 @@
       align-items: center;
       gap: 3px;
     }
+
     h4 {
       font-weight: $fontWeightMedium;
       @include fonts(24, 36);
@@ -2376,16 +2434,19 @@
     background: transparent;
     border: 1px solid $colorVioletNine;
     border-radius: 45px;
+
     span:nth-child(1) {
       font-weight: $fontWeightSemiBold;
       @include fonts(15.12, 18.15);
       @include letter(-0.04em);
     }
+
     span:nth-child(2) {
       background-image: url('/assets/img/VectorFeatures.svg');
       width: 35px;
       height: 10.53px;
     }
+
     &:hover {
       border: 1px solid $colorWhite;
       cursor: pointer;
@@ -2400,9 +2461,11 @@
     font-weight: $fontWeightSemiBold;
     color: $colorWhite !important;
   }
+
   &__span {
     background: $colorWhite;
   }
+
   &__btn-swiper {
     @include flex-column;
     gap: 16px;
@@ -2424,20 +2487,23 @@
       height: 10px;
       rotate: -90deg;
     }
+
     &_next {
       span {
         rotate: 90deg !important;
       }
     }
   }
+
   &__border {
     position: absolute;
     height: 80px;
     left: -1px;
-    top:0;
+    top: 0;
     width: 60px;
     border-radius: 45px 45px 0 0;
     border: none;
+
     &:hover {
       cursor: pointer;
       border-top: 1px solid $colorWhite;
@@ -2452,36 +2518,67 @@
 /* /features */
 
 
-
 /*swiper */
 .swiper {
   @include flex-center;
+
+  &__pagination {
+    display: none;
+    position: absolute;
+    bottom: 46px !important;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background-color: rgba(131, 103, 189, 1);
+    margin: 0 4px;
+    border-radius: 52px;
+  }
+
+  &-pagination-bullet-active {
+    width: 46px;
+    height: 14px;
+    background-color: $colorWhite;
+  }
+
   &__item {
+    opacity: 0;
     border-radius: 41px;
     padding: 76px 55px 61px;
     border: 1px solid $colorVioletThirteen;
     @include flex-row;
     gap: 21px;
+
     img {
       width: 120px;
       height: 116px;
     }
   }
+
   &__div {
     @include flex-row;
+    justify-content: space-between;
   }
+
   &__items {
     width: 622px;
     height: 439px;
   }
+
   &__info {
     justify-content: space-between;
     @include flex-column;
+
     h5 {
       font-weight: $fontWeightRegular;
       @include fonts(40, 38.8);
       @include letter(-0.04em);
     }
+
     p {
       font-weight: $fontWeightRegular;
       @include fonts(15.88, 22.23);
@@ -2489,43 +2586,57 @@
       color: #F5F5F5;
     }
   }
-  &-slide {
-    opacity: 0;
-    &-active, &-next, &-prev {
-      opacity: 1;
-    }
-    &-active {
-      z-index: 1;
-      background: $colorVioletTwelve;
-      transition: background;
-      border: none;
-    }
+
+
+  &-next, &-prev {
+    opacity: 0.8;
+  }
+  &-next {
+  transform: translate3d(0px, -250px, -348.519px) !important;
+    scale: 0.8 !important;
+  }
+
+  &-active {
+    opacity: 1;
+    z-index: 1;
+    background: $colorVioletTwelve;
+    transition: background;
+    border: none;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .features__block {
+    height: 100vh;
+  }
+  .features__items {
+    display: none;
   }
 }
 
-
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 850px) {
   .features {
     &__container {
       padding: 43px 45px 54px;
     }
+
     &__group {
       h4 {
         @include fonts(79, 74);
       }
+
       span {
         display: none;
       }
     }
 
-    &__items {
-      display: none;
-    }
 
     &__info-btn {
       width: 230px;
       height: 69px;
       gap: 15px;
+
       span:nth-child(1) {
         @include fonts(22, 27);
       }
@@ -2534,59 +2645,79 @@
     &__span {
       background: $colorWhite;
     }
+
     &__btn-swiper {
-     display: none;
+      display: none;
     }
   }
 }
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 850px) {
   .swiper {
     &__item {
       padding: 54px 82px 44px 86px;
       gap: 0;
+
       img {
         width: 147px;
         height: 142px;
       }
     }
+
+    &__pagination {
+      @include flex-center;
+    }
+
     &__items {
       width: 597px;
       height: 655px;
       margin: 100px auto 55px;
     }
+
     &__info {
       h5 {
         @include fonts(66.13, 54.89);
       }
+
       p {
         @include fonts(25, 30.5);
         @include letter(-0.03em);
       }
+    }
+    &-next {
+      transform: translate3d(-207px, 0px, -100px) !important;
+    }
+
+    &-prev {
+      transform: translate3d(207px, 0px, -100px) !important;
     }
   }
 
 }
 
 
-
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px) {
   .features {
     &__container {
       padding: 45px 14px 59px;
     }
+
     &__group {
       h4 {
         @include fonts(36, 33.8);
       }
     }
 
+    &__block {
+      height: auto;
+    }
+
     &__info-btn {
       width: 133px;
       height: 40px;
       gap: 9px;
+
       span:nth-child(1) {
         @include fonts(13, 16);
       }
@@ -2595,29 +2726,270 @@
 }
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px) {
   .swiper {
     &__item {
       padding: 25px;
+
       img {
         width: 66px;
         height: 64px;
       }
     }
+
     &__items {
+      padding-left: 50px;
+      padding-right: 50px;
       width: 271px;
       height: 320px;
       margin: 50px 0 18px;
     }
+
     &__info {
       h5 {
-        margin-left: 18px;
         @include fonts(30, 25);
       }
+
       p {
         @include fonts(12, 15);
       }
     }
   }
-
 }
+
+@media screen and (max-width: 392px) {
+  .swiper {
+    &__items {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    &-next {
+      transform: translate3d(-221px, 0px, -100px) !important;
+    }
+
+    &-prev {
+      transform: translate3d(220px, 0px, -100px) !important;
+    }
+  }
+}
+/* platform */
+.stage {
+  &__container {
+    padding: 60px 25px 98px;
+    @include flex-column;
+  }
+
+  &__row {
+    position: relative;
+    @include flex-row;
+    justify-content: space-between;
+    height: 236px;
+
+    h4 {
+      font-weight: $fontWeightMedium;
+      @include fonts(90, 92.7);
+      @include letter(-0.04em);
+    }
+
+    span {
+      @include fontsSize15;
+      color: $colorGrey;
+    }
+  }
+
+  &__group {
+    @include flex-row;
+    position: relative;
+  }
+
+  &__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: 50%;
+    z-index: -1;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__items {
+    margin-right: 126px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 41px 31px;
+    position: relative;
+    margin-left: auto;
+  }
+
+  &__item {
+    width: 304px;
+    @include flex-column;
+    padding: 45px 59px 40px 39px;
+    border: 1px solid $gradient-three;
+    border-radius: 40px;
+
+    h5 {
+      font-weight: $fontWeightMedium;
+      @include fonts(34, 31.62);
+      @include letter(-0.04em);
+      margin-bottom: 50px;
+    }
+
+    img {
+      object-fit: cover;
+      width: 84px;
+      height: 84px;
+    }
+
+    p {
+      margin-top: 96px;
+      @include fonts(16, 21.6);
+      @include letter(-0.04em);
+      font-weight: $fontWeightRegular;
+    }
+  }
+
+  &__img {
+    width: 123px !important;
+    height: 77px !important;
+  }
+
+  &__info {
+
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .stage {
+    &__container {
+      height: 100vh;
+      padding: 30px 18px 62px;
+    }
+
+    &__row {
+      height: 179px;
+
+      h4 {
+        @include fonts(70, 72.1);
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    &__items {
+      margin-right: 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-left: 0;
+    }
+
+    &__group {
+
+    }
+
+    &__item {
+      margin-top: 376px;
+      width: auto;
+      padding: 37px 39px 42px 32px;
+      border-radius: 33px;
+
+      h5 {
+        @include fonts(28.23, 26.26);
+        @include letter(-0.04em);
+        margin-bottom: 23px;
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+      }
+
+      p {
+        margin-top: 68px;
+        @include fonts(14, 18.9);
+      }
+    }
+
+    &__img {
+      width: 102px !important;
+      height: 64px !important;
+    }
+
+    &__picture {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .stage {
+    &__container {
+      padding: 0 10px 37px;
+    }
+
+    &__row {
+      height: 100px;
+
+      h4 {
+        @include fonts(40, 37.2);
+      }
+    }
+
+    &__items {
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: 344px;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+
+    &__item {
+      @include flex-row;
+      margin-top: 0;
+      padding: 23px;
+      border-radius: 22px;
+      justify-content: space-between;
+
+      h5 {
+        @include fonts(19.14, 17.8);
+        @include letter(-0.04em);
+        margin-bottom: 0;
+      }
+
+      img {
+        width: 47px;
+        height: 47px;
+      }
+
+      p {
+        width: 60%;
+        margin-top: 0;
+        @include fonts(12, 16.2);
+      }
+    }
+
+    &__info {
+      @include flex-column;
+      gap: 15px;
+    }
+
+    &__img {
+      width: 69px !important;
+      height: 43px !important;
+    }
+
+    &__picture {
+      top: 35%;
+    }
+
+  }
+}
+
+/* /platform */
