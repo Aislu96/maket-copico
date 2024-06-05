@@ -18,3 +18,19 @@ video.addEventListener('click', toggleVideo);
 crossIcon.addEventListener('click', toggleCross);
 
 
+
+
+
+
+
+const arrows =  document.querySelectorAll('.partners__img');
+const text = document.querySelectorAll('.partners__text');
+
+
+
+for (let i = 0; i < arrows.length; i++) {
+  arrows[i].addEventListener('click',function () {
+    if(!arrows[i]) return;
+    text[i].classList.toggle("partners__text_active");
+  });
+}
