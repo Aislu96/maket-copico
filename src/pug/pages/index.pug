@@ -7,30 +7,28 @@ block variables
     - var pageClass='index-page';
 
 block content
+    div(class="overlay")
+    div(class="video__group")
+        div(class="video__cross-icon")
+            div(class="video__line1")
+            div(class="video__line2")
+        video(class="video__play" controls)
+            source(src="assets/video.mp4" type="video/mp4")
 
-
-    section(class="video")
-        div(class="video__container")
-            //img(class="video__image" src="assets/img/video/fon.jpg" alt="picture video")
-            div(class="video__block")
-                h2 Get your first $1K to $1.5K a week the most profitable skill ever
-                div(class="video__items")
-                    p Make anywhere from $1,000 to $1,500 a week as a beginner Trader using Unix Trading Strategy!
-                    div(class="banner__img")
-                        a(href="#")
-                            img(src="assets/img/info/picOne.svg" alt="picture")
-                        a(href="#")
-                            img(src="assets/img/info/picTwo.svg" alt="picture")
-                button(class="video__button" type="button")
-                    span
-
-            div(class="video__group")
-                div(class="video__cross-icon")
-                    div(class="video__line1")
-                    div(class="video__line2")
-                video(class="video__play" controls)
-                    source(src="assets/video.mp4" type="video/mp4")
-
+    section(class="banner")
+        div(class="section__video section__video_active")
+            video(id="myVideo" autoplay muted loop)
+                source(src="assets/img/anmim.mp4" type="video/mp4")
+        div(class="banner__container")
+            h1(class="banner__title") Get your first $1K to $1.5K a week the most profitable skill ever
+            button(class="banner__button" type="button")
+                span
+            p(class="banner__text") Make anywhere from $1,000 to $1,500 a week as a beginner <br> Trader using Unix Trading Strategy!
+            div(class="banner__img")
+                a(href="#")
+                    img(src="assets/img/info/picOne.svg" alt="picture")
+                a(href="#")
+                    img(src="assets/img/info/picTwo.svg" alt="picture")
     section(class="benefits")
         div(class="benefits__container")
             div(class="benefits__row")
@@ -81,6 +79,41 @@ block content
                     div(class="numbers__item")
                         img
 
+    section(class="about-us")
+        div(class="about-us__container")
+            div(class="about-us__img")
+                 img(src="assets/img/mask.jpg" alt="picture")
+            form(class="about-us__wrapper" id="form-reg")
+                    div(class="about-us__group")
+                        h4 From zero to hero with Trading
+                        p To access the e-book for free, please fill out the form below with your correct information.
+                    div(class="about-us__item")
+                        input(name="name" type="text" id="exampleInputName1" placeholder="Name Surname" minLength="3"  maxLength="40" required)
+                    div(class="about-us__item")
+                        input(name="email" type="email" id="exampleInputEmail1" placeholder="Email" minLength="6" maxLength="40" required)
+                    div(class="about-us__item")
+                        input(name="phone" type="text"  id="phone" placeholder="Phone" value="Phone" required)
+                    div(class="about-us__checkbox")
+                        input(type="checkbox" id="scales" name="scales"  checked)
+                        label(for="scales" id="checkboxLabel") I agree to <span> terms & conditions </span> provided by the company. By providing my phone number, I agree to receive text messages from the business.
+
+                    button(type="submit" class="about-us__button") Get Free E-Book
+
+
+
+    section(class="info")
+        div(class="section__img section__img_info" style="background-image:url(/assets/img/infoFon.png)")
+        div(class="info__container")
+            h2 World’s Most Profitable Trading Community
+            div(class="info__buttons")
+                button(class="info__button")
+                    a(href="#")
+                        span Discord
+                        img(src="assets/img/info/picOne.svg" alt="picture")
+                button(class="info__button")
+                    a(href="#")
+                        span Telegram
+                        img(src="assets/img/info/picTwo.svg" alt="picture")
 
     section(class="partners")
         div(class="partners__container")
@@ -140,20 +173,7 @@ block content
                                 img(src="assets/img/Vector.svg" alt="picture")
                         p(class="partners__text")  You don't need to know anything about the financial markets to make money in it, however, I will teach you everything you need to understand what you are doing.
 
-    section(class="info")
-        div(class="section__img section__img_info" style="background-image:url(/assets/img/infoFon.png)")
-        div(class="info__container")
-            h2 World’s Most Profitable Trading Community
-            div(class="info__buttons")
-                button(class="info__button")
-                    a(href="#")
-                        span Discord
-                        img(src="assets/img/info/picOne.svg" alt="picture")
-                button(class="info__button")
-                    a(href="#")
-                        span Telegram
-                        img(src="assets/img/info/picTwo.svg" alt="picture")
-
 block script
     script(type='text/javascript')
+
 

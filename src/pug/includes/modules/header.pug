@@ -3,5 +3,6 @@ header(class="header")
         div(class="header__groups")
             img(class="logo" src="/assets/img/logo.svg", alt="Picture logo")
             div(class="header__group")
-                a(class="header__item" href="https://calendly.com/")
-                    span Book A Call!
+                script(type="text/javascript") window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/sencer-binorix/30min', text: 'Book A Call!',  color: '#5f29b7', textColor: '#ffffff', branding: undefined }); }
+                //a(class="header__item" href="https://calendly.com/")
+                //    span Book A Call!
