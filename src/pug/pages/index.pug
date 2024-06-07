@@ -2,7 +2,7 @@ extends ../layout/base
 
 block variables
     //подключаем основу для страницы и выводим в нее данные
-    - var title='Binorix';
+    - var title='UNIX trading hub';
     - var description = 'Binorix';
     - var pageClass='index-page';
 
@@ -25,9 +25,9 @@ block content
                 span
             p(class="banner__text") Make anywhere from $1,000 to $1,500 a week as a beginner <br> Trader using Unix Trading Strategy!
             div(class="banner__img")
-                a(href="#")
+                a(href="https://discord.gg/Rgfzs9PP" target="_blank")
                     img(src="assets/img/info/picOne.svg" alt="picture")
-                a(href="#")
+                a(href="https://t.me/unixtradinghub" target="_blank")
                     img(src="assets/img/info/picTwo.svg" alt="picture")
     section(class="benefits")
         div(class="benefits__container")
@@ -65,7 +65,7 @@ block content
                     div(class="border")
                         div(class="border-container")
                             h4 UNIX TRADING HUB
-                            span Become Trader Now
+                            a(href="#" target="_blank") Become Trader Now
                 h2 These are the daily results of the Unix Trade members.
             div(class="numbers__group")
                 p Seamless Trading Experience
@@ -82,7 +82,7 @@ block content
     section(class="about-us")
         div(class="about-us__container")
             div(class="about-us__img")
-                 img(src="assets/img/mask.jpg" alt="picture")
+                 img(src="assets/img/cover.png" alt="picture")
             form(class="about-us__wrapper" id="form-reg")
                     div(class="about-us__group")
                         h4 From zero to hero with Trading
@@ -94,8 +94,8 @@ block content
                     div(class="about-us__item")
                         input(name="phone" type="text"  id="phone" placeholder="Phone" value="Phone" required)
                     div(class="about-us__checkbox")
-                        input(type="checkbox" id="scales" name="scales"  checked)
-                        label(for="scales" id="checkboxLabel") I agree to <span> terms & conditions </span> provided by the company. By providing my phone number, I agree to receive text messages from the business.
+                        input(type="checkbox" id="scales" name="scales" required checked)
+                        label(for="scales" id="checkboxLabel") I agree to <a href="#" target="_blank"> terms & conditions </a> provided by the company. By providing my phone number, I agree to receive text messages from the business.
 
                     button(type="submit" class="about-us__button") Get Free E-Book
 
@@ -107,11 +107,11 @@ block content
             h2 World’s Most Profitable Trading Community
             div(class="info__buttons")
                 button(class="info__button")
-                    a(href="#")
+                    a(href="https://discord.gg/Rgfzs9PP" target="_blank")
                         span Discord
                         img(src="assets/img/info/picOne.svg" alt="picture")
                 button(class="info__button")
-                    a(href="#")
+                    a(href="https://t.me/unixtradinghub" target="_blank")
                         span Telegram
                         img(src="assets/img/info/picTwo.svg" alt="picture")
 
@@ -120,7 +120,7 @@ block content
             div(class="partners__group")
                 div(class="border border__partners")
                     div(class="border-container border-container__partners")
-                        h2 any more <br> question?
+                        h2 any more <br> questions?
                         h3 The last place you’ll ever need to go become a profitable trader.
             div(class="partners__block")
                 div(class="partners__items")

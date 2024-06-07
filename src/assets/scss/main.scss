@@ -9,6 +9,16 @@
 @import "block/banner";
 @import "utils/telephone";
 
+
+link[rel="icon"] {
+  width: 50px;
+  height: 50px;
+}
+
+title {
+  background-color: $colorBlack;
+}
+
 .index-page {
   font-family: "Nekst", sans-serif;
   background-color: $colorBlack;
@@ -381,7 +391,6 @@
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     padding: 100px 100px;
     position: fixed;
-    left: 2rem;
     right: 1rem;
     top: 0;
     z-index: 10000;
@@ -620,7 +629,7 @@
   background-color: $colorBlack;
 
   &__container {
-    padding: 20px 118px;
+    padding: 20px 25px;
     @include flex-column;
   }
 
@@ -654,29 +663,23 @@
 }
 
 .logo {
-  width: 245px;
-  height: 52px;
+  object-fit: contain;
+  width: 100px;
+  height: auto;
 }
 
 
 @media screen and (max-width: 1240px) {
   .header {
     &__container {
-      @include container-full(1.94rem);
+      padding-left: 16px;
+      padding-right: 16px;
     }
-  }
-
-  .logo {
-    width: 235px;
-    height: 48px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .header {
-    &__container {
-      @include container-full(1.75rem);
-    }
 
     &__item {
       border-radius: 40px;
@@ -688,11 +691,6 @@
     & span {
       @include fonts(15, 18);
     }
-  }
-
-  .logo {
-    width: 132px;
-    height: 28px;
   }
 }
 
@@ -851,6 +849,7 @@
   &__item {
     width: 100%;
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
@@ -859,9 +858,11 @@
       background: rgba(0, 0, 0, .15);
       z-index: 100;
     }
+
     &:nth-child(1), &:nth-child(3) {
       margin-top: 70px;
     }
+
     img {
       border-radius: 2px;
       object-fit: contain;
@@ -903,12 +904,16 @@
       opacity: .6;
     }
 
-    span {
+    a {
       padding-top: 15px;
       font-weight: $fontWeightRegular;
       @include fonts(15, 15.45);
       @include letter(-0.04em);
       color: $colorGrayFour;
+
+      &:hover {
+        color: #904bff;
+      }
     }
   }
 }
@@ -972,7 +977,6 @@
     &__row {
       margin-bottom: 51px;
       height: 55px;
-
     }
   }
 }
@@ -984,6 +988,7 @@
       position: relative;
       overflow: hidden;
     }
+
     img {
       transform: scale(1);
       top: 0;
@@ -1000,7 +1005,7 @@
     }
 
     &__group {
-      margin-top: 100px;
+      margin-top: 80px;
       justify-content: center;
 
       p {
@@ -1054,7 +1059,7 @@
         @include fonts(20, 20);
       }
 
-      span {
+      a {
         padding-top: 0;
       }
     }
@@ -1198,13 +1203,13 @@
 }
 
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
   .benefits__block h2 {
-    @include fonts(110, 110.9);
+    @include fonts(80, 80.9);
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1240px) {
   .benefits {
     &__container {
       padding: 95px 16px 220px;
@@ -1264,6 +1269,18 @@
   }
 }
 
+
+@media screen and (max-width: 900px) {
+  .benefits {
+    &__info_one img, &__info_three img {
+      left: -88px;
+    }
+    &__block h2 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+}
 
 @media screen and (max-width: 700px) {
   .benefits {
@@ -1337,12 +1354,14 @@
   background: $gradient-fix;
 
   &__container {
+    margin-bottom: 5px;
     padding: 31px 25px 111px;
     @include flex-column;
     gap: 101px;
   }
 
   &__text {
+    margin-top: 30px;
     display: none;
     font-weight: $fontWeightLight;
     @include fonts(30, 33.9);
@@ -1383,7 +1402,6 @@
   }
 
   &__block {
-    margin: 0 auto;
     @include flex-row;
     gap: 36px;
   }
@@ -1400,6 +1418,11 @@
     border-radius: 40px;
     border: 1px solid $colorVioletNine;
     padding: 20px 56px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 
   &__info {
@@ -1418,11 +1441,6 @@
       object-fit: contain;
       width: 100%;
       height: 100%;
-    }
-
-    &:hover {
-      cursor: pointer;
-      opacity: 0.8;
     }
   }
 }
@@ -1542,6 +1560,7 @@
       @include flex-center;
       gap: 10px;
     }
+
     &:hover {
       cursor: pointer;
       opacity: 0.8;
@@ -1684,6 +1703,7 @@
   &__group {
     @include flex-row;
     gap: 17px;
+    margin-bottom: 34px;
   }
 
   p {
@@ -1693,15 +1713,6 @@
     text-align: center;
     margin-bottom: 20px;
     opacity: 0.4;
-  }
-
-  h3 {
-    font-size: 35px;
-    font-weight: $fontWeightMedium;
-    line-height: 30px;
-    @include fonts(35, 30);
-    letter-spacing: -0.6800000071525574px;
-    margin-top: 34px;
   }
 
   a {
@@ -1736,19 +1747,19 @@
       padding-right: 32px;
       padding-top: 31px;
     }
-
+  &__group {
+    align-items: center;
+    flex-direction: column;
+  }
     p {
       @include fonts(15, 15);
     }
 
-    h3 {
-      @include fonts(20, 15);
-    }
-
-    span {
-      margin-top: 29px;
-      @include fonts(14, 14);
-      letter-spacing: -0.6800000071525574px;
+    a {
+      margin-top: 20px;
+      border: none;
+      text-align: center;
+      padding-right: 0;
     }
   }
 }
@@ -1802,9 +1813,10 @@
 
   &__checkbox {
     @include flex-row;
+    align-items: baseline;
     gap: 10px;
 
-    span {
+    a {
       text-decoration: underline;
     }
   }
@@ -1884,12 +1896,8 @@
       @include flex-column;
     }
 
-    &__img {
-      width: 80%;
-    }
-
-    &__wrapper {
-      width: 80%;
+    &__img, &__wrapper {
+      width: 70%;
     }
   }
 }
@@ -1910,6 +1918,7 @@
 
 
 .calendly-badge-widget {
+  height: 90px;
   position: absolute;
-  top: 20px;
+  top: 29px;
 }
