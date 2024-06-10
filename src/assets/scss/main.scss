@@ -664,10 +664,14 @@ title {
 
 .logo {
   object-fit: contain;
-  width: 100px;
+  width: 150px;
   height: auto;
 }
-
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 100px;
+  }
+}
 
 @media screen and (max-width: 1240px) {
   .header {
@@ -680,7 +684,6 @@ title {
 
 @media screen and (max-width: 600px) {
   .header {
-
     &__item {
       border-radius: 40px;
       border: 1px solid $colorVioletTwo;
