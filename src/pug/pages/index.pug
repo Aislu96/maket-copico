@@ -7,28 +7,28 @@ block variables
     - var pageClass='index-page';
 
 block content
-    div(class="overlay")
-    div(class="video__group")
-        div(class="video__cross-icon")
-            div(class="video__line1")
-            div(class="video__line2")
-        video(class="video__play" controls)
-            source(src="assets/video.mp4" type="video/mp4")
 
     section(class="banner")
-        div(class="section__video section__video_active")
-            video(id="myVideo" autoplay muted loop)
+        div(class="section__video")
+            video(autoplay muted loop)
                 source(src="assets/img/anmim.mp4" type="video/mp4")
         div(class="banner__container")
             h1(class="banner__title") Get your first $1K to $1.5K a week the most profitable skill ever
-            button(class="banner__button" type="button")
-                span
-            p(class="banner__text") Make anywhere from $1,000 to $1,500 a week as a beginner <br> Trader using Unix Trading Strategy!
+
+            div(class="video__fixed-mobile")
+                iframe(class="video__iframe" width="560" height="315" src="https://www.youtube.com/embed/RPCZBBUe474" allowfullscreen)
+            p(class="banner__text") Make anywhere from $1,000 to $1,500 a week as a beginner Trader using Unix Trading Strategy!
             div(class="banner__img")
                 a(href="https://discord.gg/Rgfzs9PP" target="_blank")
                     img(src="assets/img/info/picOne.svg" alt="picture")
                 a(href="https://t.me/unixtradinghub" target="_blank")
                     img(src="assets/img/info/picTwo.svg" alt="picture")
+        div(class="video__fixed")
+            svg(class="video__fixed--close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 50 50" style="fill:#FFFFFF;")
+                path(d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z")
+            iframe(class="video__iframe" width="560" height="315" src="https://www.youtube.com/embed/RPCZBBUe474" allowfullscreen)
+
+
     section(class="benefits")
         div(class="benefits__container")
             div(class="benefits__row")
@@ -132,32 +132,34 @@ block content
                         p(class="partners__text") If you dedicate between 1 to 2 hours a day and follow all the indications that are in the program, you should get your first results in 3 months.
                     div(class="partners__item")
                         div(class="partners__info")
-                            h4 Will it work for me?
+                            h4 What topics are covered in the ebook?
                             div(class="partners__img")
                                 img(src="assets/img/Vector.svg" alt="picture")
-                        p(class="partners__text")  This works for anyone, no matter your age, country, gender, or economic situation, because it is a method that is validated with numbers, and all you have to do is make the same decisions as I did to get similar results and that is exactly what I teach in the program.
+                        p(class="partners__text")  The book covers: Understanding Forex Trading, Getting Started, Analysis Techniques, Developing a Trading Strategy
 
                     div(class="partners__item")
                         div(class="partners__info")
-                            h4 I don’t have much money to invest
+                            h4 Who can benefit from reading the ebook?
                             div(class="partners__img")
                                 img(src="assets/img/Vector.svg" alt="picture")
-                        p(class="partners__text")  With only $10 USD you can start, either with your own account or by buying a funding account as explained in the video, and be able to access 25k – 50k – 100k capitals.
+                        p(class="partners__text")  This ebook can be beneficial for beginners looking to learn the basics of trading, intermediate traders seeking to improve their skills and knowledge, and experienced traders interested in refining their strategies or exploring new approaches to the market.
+
 
                     div(class="partners__item")
                         div(class="partners__info")
-                            h4 What if I don’t know anything about financial marktet?
+                            h4 How can I interact with the experts and other participants?
                             div(class="partners__img")
                                 img(src="assets/img/Vector.svg" alt="picture")
-                        p(class="partners__text")  You don't need to know anything about the financial markets to make money in it, however, I will teach you everything you need to understand what you are doing.
+                        p(class="partners__text")  You can interact with the experts and fellow participants through: One-on-one sessions on messengers, such as WhatsApp, Telegram, Zoom and others, Live Q&A sessions, Group projects and activities
 
                 div(class="partners__items")
                     div(class="partners__item")
                         div(class="partners__info")
-                            h4 How long will it take to get results?
+                            h4 I don´t have much money to invest
                             div(class="partners__img")
                                 img(src="assets/img/Vector.svg" alt="picture")
-                        p(class="partners__text")  If you dedicate between 1 to 2 hours a day and follow all the indications that are in the program, you should get your first results in 3 months.
+                        p(class="partners__text")  With only $10 USD you can start, either with your own account or by buying a funding account as explained in the video, and be able to access 25k – 50k – 100k capitals.
+
 
                     div(class="partners__item")
                         div(class="partners__info")

@@ -192,55 +192,148 @@ title {
 }
 
 /* banner */
+
+.section__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+
+  video {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.video__fixed-mobile {
+  display: none;
+}
+.video__fixed {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  height: 40vh;
+
+  &--close {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -25px;
+    width: 20px;
+    height: 20px;
+  }
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .section__video {
+    width: 163%;
+    height: 51%;
+    left: -503px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section__video {
+    width: 187%;
+    height: 65%;
+    left: -463px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section__video {
+    width: 205%;
+    height: 70%;
+    left: -34px;
+
+
+    video {
+      width: 189%;
+      height: 100%;
+      top: -129px;
+      left: -41%;
+      rotate: 16deg;
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .section__video {
+    width: 219%;
+    height: 48%;
+    left: 0;
+
+  }
+}
+
 .banner {
   width: 100%;
+  max-height: 90vh;
+  height: 90vh;
+  min-height: 500px;
   overflow: hidden;
   position: relative;
 
   &__container {
-    padding: 90px 53px 63px;
+    padding: 204px 53px 63px;
     @include flex-column;
     width: 100%;
-    justify-content: center;
+  }
+
+
+  &__title {
+    margin-top: 90px;
+    width: 47%;
+    margin-bottom: 80px;
+    color: transparent;
+    text-align: left;
+    @include fonts(80, 97);
+    @include letter(-0.02em);
+    font-weight: $fontWeightMedium;
+    background: $gradient-four;
+    -webkit-background-clip: text;
+  }
+
+  &__text {
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 27px;
+    font-weight: $fontWeightSemiBold;
+    @include fonts(30, 33.9);
+    @include letter(-0.04em);
+  }
+
+
+  &__group {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 14px;
     align-items: center;
+    justify-content: space-between;
   }
-
-  &__button {
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(180deg, #5A2FED 0%, #8F00FF 100%);
-    @include flex-center;
-
-    span {
-      background-image: url("/assets/img/video/Polygon 3.svg");
-      display: block;
-      margin: 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 2;
-      width: 30px;
-      height: 34px;
-    }
-
-    &:hover {
-      opacity: 0.8;
-      cursor: pointer;
-    }
-  }
-
 
   &__img {
-    @include flex-column;
+    @include flex-row;
     gap: 9px;
-    position: absolute;
-    bottom: 11%;
-    right: 5%;
 
     a {
       border-radius: 50px;
@@ -260,82 +353,44 @@ title {
       height: 35px;
     }
   }
-
-  &__text {
-    text-align: center;
-    font-weight: $fontWeightSemiBold;
-    @include fonts(30, 33.9);
-    @include letter(-0.04em);
-    margin-bottom: 7%;
-  }
-
-
-  &__title {
-    width: 100%;
-    margin-bottom: 12%;
-    margin-top: 15%;
-    color: transparent;
-    text-align: center;
-    @include fonts(102, 97);
-    @include letter(-0.02em);
-    font-weight: $fontWeightMedium;
-    background: $gradient-four;
-    -webkit-background-clip: text;
-  }
-
-  &__group {
-    @include flex-row;
-    flex-wrap: wrap;
-    gap: 14px;
-    align-items: center;
-    justify-content: space-between;
-  }
-
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1600px){
   .banner {
-
-    &__container {
-      padding: 197px 48px 29px 17px;
-    }
-
     &__title {
-      @include fonts(85, 81);
+      @include fonts(55, 65);
+      max-width: 50%;
     }
 
-    &__group {
-      justify-content: center;
-    }
-
-    &__button {
-      width: 80px;
-      height: 80px;
-
-      //span {
-      //  width: 45px;
-      //  height: 54px;
-      //}
-    }
-
-    &__img {
-      right: 3%;
-      bottom: 8%;
-    }
   }
+
+  .video__fixed {
+    top: 50%
+  }
+
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1600px){
   .banner {
     &__title {
       margin-top: 0;
-      width: 100%;
-      @include fonts(60, 60);
     }
+  }
+  .video__fixed {
+    top: 60%
+  }
+}
+@media screen and (max-width: 1200px) {
 
+  .banner {
+    &__title {
+      @include fonts(55, 50);
+      margin-top: 20px;
+    }
     &__text {
-      @include fonts(24, 22);
-      width: 70%;
+      margin: 0 0 20px;
+      @include fonts(25, 30);
+      max-width: 50%;
     }
 
     &__img {
@@ -349,22 +404,95 @@ title {
         height: 25px;
       }
     }
+
+    &__group {
+      justify-content: center;
+    }
+
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+
   .banner {
+    max-height: none;
+    height: auto;
+    &__title {
+      margin-top: 0;
+      max-width: 100%;
+      width: 100%;
+      @include fonts(40, 45);
+      text-align: center;
+    }
+
+    &__text {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
+    &__img {
+      justify-content: center;
+    }
+  }
+  .video__fixed {
+    display: none;
+  }
+  .video__fixed-mobile {
+    display: block;
+    margin-bottom: 40px;
+    iframe {
+      width: 100%;
+    }
+  }
+}
+
+
+@media screen and (max-width:  900px) and (max-height: 1200px) {
+  .banner {
+    &__title {
+      max-width: 100%;
+      width: 100%;
+      @include fonts(40, 45);
+      text-align: center;
+    }
+
+    &__text {
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
+    &__img {
+      justify-content: center;
+    }
+  }
+  .video__fixed {
+    display: none;
+  }
+  .video__fixed-mobile {
+    display: block;
+    margin-bottom: 40px;
+    iframe {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner {
+    @include flex-column;
     &__container {
+      padding-top: 128px;
       padding-left: 10px;
       padding-right: 10px;
     }
 
     &__title {
-      @include fonts(40, 40);
+      margin-bottom: 30px;
+      margin-top: 0;
+      width: 100%;
     }
 
     &__text {
-      margin-top: 67px;
+      margin-top: 10px;
       margin-bottom: 19px;
       @include fonts(18.34, 20.72);
     }
@@ -380,6 +508,7 @@ title {
         height: 20px;
       }
     }
+
   }
 }
 
@@ -388,16 +517,17 @@ title {
 .video {
   &__group {
     margin: 0 auto;
+    box-sizing: border-box;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     padding: 100px 100px;
     position: fixed;
+    overflow: hidden;
     right: 1rem;
     top: 0;
     z-index: 10000;
     display: none;
     width: 100%;
-    height: max-content;
-
+    height: 1203px;
 
     &_active {
       display: block;
@@ -406,7 +536,7 @@ title {
 
   &__play {
     width: 100%;
-    height: 66%;
+    height: 100%;
   }
 
   &__container {
@@ -462,6 +592,7 @@ title {
     background-color: $colorWhite;
     top: 50%;
     transform-origin: center;
+    z-index: 1000;
   }
 
   &__line1 {
@@ -473,6 +604,21 @@ title {
   }
 }
 
+//@media screen and (max-width: 1200px) {
+//  .video {
+//    &__group {
+//      height: 903px;
+//    }
+//  }
+//}
+//
+//@media screen and (max-width: 900px) {
+//  .video {
+//    &__group {
+//      height: 803px;
+//    }
+//  }
+//}
 
 @media screen and (max-width: 600px) {
   .video {
@@ -667,9 +813,10 @@ title {
   width: 150px;
   height: auto;
 }
+
 @media screen and (max-width: 600px) {
   .logo {
-    width: 100px;
+    width: 90px;
   }
 }
 
@@ -700,79 +847,31 @@ title {
 /* /header */
 
 
-.section__video {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-
-  video {
-    width: 100%;
-    height: 100%;
-    transform: scaleX(-1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    object-fit: cover;
-    z-index: -1;
-  }
-}
+//.section__video {
+//  display: flex;
+//  width: 100%;
+//  height: 100%;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  bottom: 0;
+//
+//  iframe {
+//    opacity: 0.5;
+//    width: 100%;
+//    height: 100%;
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    bottom: 0;
+//    object-fit: contain;
+//    z-index: -1;
+//  }
+//}
 
 .show {
   display: none;
 }
-
-//
-//@media screen and (max-width: 1000px) {
-//  .section__video {
-//    width: 163%;
-//    height: 51%;
-//    top: 493px;
-//    left: -503px;
-//  }
-//}
-//
-//@media screen and (max-width: 800px) {
-//  .section__video {
-//    width: 187%;
-//    height: 65%;
-//    top: 493px;
-//    left: -463px;
-//  }
-//}
-//
-//@media screen and (max-width: 600px) {
-//  .section__video {
-//    width: 205%;
-//    height: 70%;
-//    top: -93px;
-//    left: -34px;
-//
-//
-//    video {
-//      width: 189%;
-//      height: 100%;
-//      top: -129px;
-//      left: -41%;
-//      rotate: 16deg;
-//    }
-//  }
-//}
-
-
-//@media screen and (max-width: 400px) {
-//  .section__video {
-//    width: 219%;
-//    height: 48%;
-//    top: 0;
-//    left: 0;
-//
-//  }
-//}
 
 
 /* numbers */
@@ -1278,6 +1377,7 @@ title {
     &__info_one img, &__info_three img {
       left: -88px;
     }
+
     &__block h2 {
       font-size: 3rem;
       line-height: 3rem;
@@ -1750,10 +1850,12 @@ title {
       padding-right: 32px;
       padding-top: 31px;
     }
-  &__group {
-    align-items: center;
-    flex-direction: column;
-  }
+
+    &__group {
+      align-items: center;
+      flex-direction: column;
+    }
+
     p {
       @include fonts(15, 15);
     }
@@ -1799,6 +1901,7 @@ title {
     height: 100%;
 
     img {
+      border-radius: 30px;
       object-fit: contain;
     }
   }
@@ -1855,7 +1958,7 @@ title {
 
     input {
       color: $colorWhite;
-      background-color: transparent;
+      background-color: $colorBlack;
       @include fonts(22, 29);
       @include letter(-1.6px);
       font-weight: $fontWeightRegular;
@@ -1924,4 +2027,8 @@ title {
   height: 90px;
   position: absolute;
   top: 29px;
+}
+
+.video-stream {
+  height: 424px !important;
 }

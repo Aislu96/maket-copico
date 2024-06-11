@@ -12,7 +12,18 @@ document.getElementById("form-reg").addEventListener("submit", async function(ev
   const name = formData.get("name");
   const email = formData.get("email");
   const phone = formData.get("phone");
-
+  fetch('/assets/img/Unix Trading ebook.pdf')
+    .then(response => response.blob())
+    .then(blob => {
+      var downloadLink = document.createElement('a');
+      downloadLink.href = window.URL.createObjectURL(blob);
+      downloadLink.download = 'Unix Trading ebook.pdf';
+      downloadLink.click();
+      window.URL.revokeObjectURL(downloadLink.href);
+    });
+  setTimeout(()=> {
+    window.location.replace("https://calendly.com/unixtradinghub/30min");
+  }, 5000);
   // Проверяем валидность email и номера телефона
   if (email.includes('.') && phone.length === 17) {
 
@@ -29,7 +40,7 @@ document.getElementById("form-reg").addEventListener("submit", async function(ev
       text: "Successfully registered. Soon we will call you!",
       theme: "dark",
       duration: 5000,
-      destination: "https://www.artsmrkts.com/campaigns/open-live-account?utm_source=binorix",
+      destination: "https://calendly.com/unixtradinghub/30min",
       newWindow: true,
       close: true,
       gravity: "top", // `top` or `bottom`
@@ -40,12 +51,9 @@ document.getElementById("form-reg").addEventListener("submit", async function(ev
         background: "linear-gradient(to right, #00b09b, #96c93d)"
       }
     }).showToast();
-    setTimeout(()=> {
-      window.location.replace("https://www.artsmrkts.com/campaigns/open-live-account?utm_source=binorix");
-    }, 5000)
+
 
   } else {
-    debugger;
     if (!email.includes('.')) {
       Toastify({
         title: 'Invalid Email',

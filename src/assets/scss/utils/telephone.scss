@@ -115,8 +115,7 @@
 .phone_input {
   display: flex;
   input {
-    flex: 1 1;
-    //padding: 9px 15px;
+    max-width: 80%;
     display: flex;
     border-radius: 0 4px 4px 0;
     outline: none;
